@@ -21,6 +21,7 @@ html #header #navbar, body #header #navbar {
   align-items: flex-start;
   margin: 0;
   padding: 10% 0 0 7%;
+  transition: all .3s;
   display: flex;
   position: fixed;
   top: 0;
@@ -28,13 +29,25 @@ html #header #navbar, body #header #navbar {
 }
 
 html #header #navbar li, body #header #navbar li {
-  margin-bottom: 7%;
+  margin-top: 7%;
   list-style: none;
 }
 
 html #header #navbar li a, body #header #navbar li a {
   color: #000;
   text-decoration: none;
+}
+
+html #header #navbar #close, body #header #navbar #close {
+  color: #000;
+  padding-bottom: 6%;
+  font-size: 1.8em;
+  position: absolute;
+  top: 2%;
+}
+
+html #header #navbar.active, body #header #navbar.active {
+  right: 0;
 }
 
 html #header #hamburger, body #header #hamburger {
@@ -51,8 +64,13 @@ html #hero, body #hero {
   height: 70%;
   width: 100%;
   background-image: url("hero.6fc90303.jpg");
-  background-position: 90% 0;
+  background-position: 150% 0;
   background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 80px;
+  display: flex;
 }
 
 html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body #hero h4 {
