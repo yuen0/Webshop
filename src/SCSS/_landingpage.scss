@@ -1,0 +1,57 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	#header {
+		display: flex;
+		height: 7%;
+		align-items: center;
+		justify-content: space-between;
+		background-color: gray;
+
+		#navbar {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			position: fixed;
+			margin: 0;
+			top: 0;
+			right: -100%;
+			height: 100%;
+			width: 60%;
+			padding: 10% 0 0 7%;
+			background-color: darkslategray;
+			li {
+				list-style: none;
+				margin-bottom: 7%;
+				a {
+					text-decoration: none;
+					color: black;
+				}
+			}
+		}
+
+		#hamburger {
+			padding-right: 1.5em;
+			i {
+				color: black;
+				font-size: 1.5em;
+				padding-left: 0.6em;
+			}
+		}
+	}
+	#hero {
+		h1,
+		h2,
+		h4 {
+			margin: 0;
+		}
+		background-image: url("../Assets/hero.jpg");
+		height: 70%;
+		width: 100%;
+		background-position: top 0 left 90%;
+		background-size: cover;
+	}
+}
