@@ -9,6 +9,8 @@ body {
 		align-items: center;
 		justify-content: space-between;
 		background-color: gray;
+		position: fixed;
+		width: 100%;
 
 		#navbar {
 			display: flex;
@@ -22,7 +24,7 @@ body {
 			height: 100%;
 			width: 60%;
 			padding: 10% 0 0 7%;
-			background-color: darkslategray;
+			background-color: rgb(186, 192, 192);
 			transition: 0.3s;
 			li {
 				list-style: none;
@@ -64,7 +66,7 @@ body {
 		background-image: url("../Assets/hero.jpg");
 		height: 70%;
 		width: 100%;
-		background-position: top 0 left 150%;
+		background-position: top 0 left 100%;
 		background-size: cover;
 		padding: 0 80px;
 		display: flex;
