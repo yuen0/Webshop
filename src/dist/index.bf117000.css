@@ -154,4 +154,30 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   font-weight: bold;
 }
 
+.footer {
+  color: #fff;
+  text-align: center;
+  height: 20%;
+  background-color: #2f4f4f;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.footer__container {
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.footer__container .footer__icons {
+  margin-top: 15%;
+  font-size: 2.3em;
+}
+
+.footer__container .footer__text p {
+  padding-top: 5%;
+}
+
 /*# sourceMappingURL=index.bf117000.css.map */
