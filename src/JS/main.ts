@@ -20,35 +20,66 @@ addtocart_btn.addEventListener("click", function(){
 }
 )
 
-var products =
+const products =
 [
     {
-        "name": "Aloe Vera",
-        "image": "bilder/severin-candrian-dgvFsLfIX9E-unsplash.jpg",
-        "origin": "Nederländerna",
-        "description": "Lättskött suckulent med tjocka gröna blad. En av världens äldsta läkeväxkter. Trivs på soliga platser. Låt den torka ut mellan varje vattning.",
+        "name": "Butterkaka",
+        "image": "..images/cake.jpg",
+        
+        "description": "Mycket fin butterkaka.",
         "height": "120cm",
-        "care": "Trivs ljust, men undvik direkt solljus. Vattna undertill och inte på växten, men låt jorden torka mellan varje vattning. Ge flytande näring från vår till höst. Eventuell omplantering ska göras på våren.",
-        "price": 59
+        
+        "price": 59,
+        id: "product_1"
     },
     {
-        "name": "Marmorblad",
-        "image": "bilder/severin-candrian-8nONCr6eTeg-unsplash.jpg",
-        "origin": "Brasilien",
-        "description": "Fin och spännande växt med kontrastrika blad med grönt mönster och lila undersida på bladen. Denna dekorativa planta passar perfekt i en kruka på golvet eller på en piedestal eller ett sidobord.",
-        "height": "65cm",
-        "care": "Ge den lite utrymme så att bladen kan sträcka ut sig väl både uppåt och åt sidorna och skapa en grön och harmonisk atmosfär i hemmet. Trivs i ljus och halvskugga, undvik direkt solljus. Håll jorden lätt fuktig. Gillar att bli duschad på bladen.",
-        "price": 299
+        "name": "Gelé någonting",
+        "image": "..images/cake.jpg",
+        
+        "description": "Spännande konsistens för alla kulinariska mesar.",
+        
+        
+        "price": 299,
+        id: "product_2"
     },
     {
-        "name": "Lyktranka",
-        "image": "bilder/severin-candrian-xGpYDi-0348-unsplash.jpg",
-        "origin": "Sydafrika, Swaziland och Zimbabwe",
-        "description": "Även känd som Hjärtan på tråd. Lyktrankan är mycket lätt att sköta och är en vacker hängväxt med små mörkgröna hjärtformade blad med ett silverskimrande mönster. Plantan kan bli över en meter, vilket gör den väl lämpad som hängväxt eller i en hög kruka.",
-        "height": "15 cm",
-        "care": "Trivs ljust, undvik direkt solljus. Låt den torka lätt mellan vattningarna.",
-        "price": 79
+        "name": "An EXTREMELY spicy sauce",
+        "image": "..images/cake.jpg",
+        
+        "description": "Får dina smaklökar att dansa tango!",
+        
+        
+        "price": 79,
+        id: "product_3"
+    },
+    {
+        "name": "I don't even know what this is",
+        "image": "..images/cake.jpg",
+        
+        "description": "Smakar verkligen inte gott.",
+        
+        
+        "price": 59,
+        id: "product_4"
+    },
+    {
+        "name": "A unique sandwich",
+        "image": "..images/cake.jpg",
+        
+        "description": "An idiot-sandwich.",
+        
+        
+        "price": 59,
+        id: "product_5"
     }
 ];
+
+function renderProducts() {
+
+    const template = 
+    ''
+    //'Lägg template html kod här'
+
+}
 
 
