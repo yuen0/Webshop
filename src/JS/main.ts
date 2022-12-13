@@ -52,3 +52,4 @@ var products =
 ];
 
 
+let cart = {};
