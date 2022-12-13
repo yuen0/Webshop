@@ -1,3 +1,8 @@
+window.onload = (_) => {
+    renderProducts();
+    initCart();
+}
+
 let addtocart_btn = document.getElementById("productButton") as HTMLButtonElement;
 
 addtocart_btn.addEventListener("click", function(){
@@ -84,3 +89,9 @@ function renderProducts() {
 
 
 let cart = {};
+
+function initCart() {
+    for (let product of products) {
+        cart[product.name] = 0;
+    }
+      }
