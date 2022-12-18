@@ -11,6 +11,7 @@ html #header, body #header {
   justify-content: space-between;
   align-items: center;
   display: flex;
+  position: fixed;
 }
 
 html #header #navbar, body #header #navbar {
@@ -153,85 +154,6 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   font-weight: bold;
 }
 
-.pInfo {
-  width: 100%;
-}
-
-.pInfo__container {
-  width: 100%;
-  flex-direction: column;
-  display: flex;
-}
-
-.pInfo__container .pInfo__imgContainer {
-  width: inherit;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.pInfo__container .pInfo__imgContainer .pInfo__img {
-  height: 70vh;
-  width: inherit;
-  background-image: url("product1.2ff4713e.jfif");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.pInfo__container .pInfo__txtContainer {
-  padding: 5%;
-}
-
-.pInfo__container .pInfo__txtContainer .pInfo__title h1 {
-  padding-bottom: 2%;
-  font-size: 2em;
-}
-
-.pInfo__container .pInfo__txtContainer .pInfo__price {
-  color: #2f4f4f;
-  padding-bottom: 2%;
-  font-size: 1.1em;
-}
-
-.pInfo__container .pInfo__txtContainer .pInfo__description {
-  padding-bottom: 2%;
-}
-
-.pInfo__container .pInfo__txtContainer .pInfo__description h3 {
-  padding-bottom: 2%;
-  font-size: 1.2em;
-}
-
-.pInfo__container .pInfo__txtContainer .pInfo__addToCart {
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 3%;
-  display: flex;
-}
-
-.pInfo__container .pInfo__txtContainer .pInfo__addToCart .pInfo__quantity {
-  justify-content: center;
-  align-items: center;
-  padding-right: 2%;
-  display: flex;
-}
-
-.pInfo__container .pInfo__txtContainer .pInfo__addToCart .pInfo__quantity input {
-  text-align: center;
-  padding: 3%;
-}
-
-.pInfo__container .pInfo__txtContainer .pInfo__addToCart .pInfo__button {
-  color: #fff;
-  width: 70%;
-  background-color: #68aaaa;
-  border: none;
-  border-radius: 12px;
-  padding: 12px 0;
-  font-weight: bold;
-}
-
 .footer {
   color: #fff;
   text-align: center;
@@ -258,4 +180,4 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   padding-top: 5%;
 }
 
-/*# sourceMappingURL=index.bf117000.css.map */
+/*# sourceMappingURL=pdetails.bf117000.css.map */

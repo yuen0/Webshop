@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Webshop</title>
+		<meta name="viewport" content="width=
+    , initial-scale=1.0">
+		<title></title>
 		<script src="https://kit.fontawesome.com/193ad45445.js" crossorigin="anonymous" defer=""></script>
 		<link rel="stylesheet" href="/index.bf117000.css">
 	</head>
@@ -29,38 +30,38 @@
 			</article>
 		</section>
 
-		<section id="hero">
-			<h4>Lorem ipsum</h4>
-			<h2>Dolor sit amet</h2>
-			<h1>consectetur adipiscing elit</h1>
-		</section>
+		<section class="pInfo">
+			<article class="pInfo__container">
+				<article class="pInfo__imgContainer">
+					<article class="pInfo__img" id="pImg"></article>
+				</article>
 
-		<section class="products">
-			<section class="products__container" id="productsContainer">
-				<h1 class="products__header">Products</h1>
-
-				<!-- Mall för hur varje produkt ska vara strukturerad sen när detta görs via DOM manipulation -->
-				<article class="products__card" id="productCardContainer">
-					<article class="products__img">
-						<img src="/product1.2ff4713e.jfif" alt="photo of product">
+				<article class="pInfo__txtContainer">
+					<article class="pInfo__title">
+						<h1 id="pTitle">2-pack sweatpants</h1>
 					</article>
-					<article class="products__content">
-						<h2 class="products__title">2-pack sweatpants</h2>
-						<p class="products__description">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
-							ratione mollitia, tempora ipsa iste necessitatibus ab praesentium
-							labore iusto magni?
-						</p>
-						<article class="products__price">
-							<p id="productPrice">149sek</p>
+					<article class="pInfo__price" id="pPrice"><h2>149:-</h2></article>
+					<article class="pInfo__addToCart">
+						<article class="pInfo__quantity">
+							<p>Qty</p>
+							<input id="pQty" type="number" min="1" max="20" value="1">
 						</article>
-						<button class="products__button" id="productButton">
-							Add to Cart
-						</button>
+						<button id="pBtn" class="pInfo__button">Add to Cart</button>
+					</article>
+
+					<article class="pInfo__description">
+						<h3>Product details</h3>
+						<p id="pDescription">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+							Repellendus ipsa iusto architecto enim eligendi debitis amet fugit
+							beatae ipsam cumque voluptas totam error explicabo a impedit
+							voluptatem porro molestias aliquid, distinctio consequatur eveniet
+							deleniti veritatis! Eos explicabo facere quos ratione eaque? Nam
+							aut neque ea nisi numquam reiciendis tempora earum?
+						</p>
 					</article>
 				</article>
-				<!--  -->
-			</section>
+			</article>
 		</section>
 
 		<section class="footer">
@@ -77,7 +78,7 @@
 				</article>
 			</article>
 		</section>
+
 		<script src="/index.485ab57d.js"></script>
-		<script src="/index.b3f9c22c.js"></script>
-	<script src="/Webshop.26b353a0.js"></script></body>
+	<script src="/pdetails.5b23b96f.js"></script></body>
 </html>
