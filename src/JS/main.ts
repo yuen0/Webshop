@@ -32,7 +32,7 @@ const products =
         "image": "..images/cake.jpg",
         
         "description": "Mycket fin butterkaka.",
-        "height": "120cm",
+        
         
         "price": 59,
         id: "product_1"
@@ -82,8 +82,37 @@ const products =
 function renderProducts() {
 
     const template = 
-    ''
-    //'Lägg template html kod här'
+    `<article class="products__card" id="productCardContainer">
+    <article class="products__img">
+        <img src="./Assets/product1.jfif" alt="photo of product" />
+    </article>
+    <article class="products__content">
+        <h2 class="products__title" id="product__title">2-pack sweatpants</h2>
+        <p class="products__description" id="products__description">
+            
+        </p>
+        <article class="products__price" >
+            <p id="productPrice"></p>
+        </article>
+        <button class="products__button" id="productButton">
+            Add to Cart
+        </button>
+    </article>
+</article>`  ;
+
+const container = document.querySelector("#productCardContainer");
+
+for (let product of products) {
+    let productTitle = document.getElementById("product__title")?.innerHTML;
+    let productDescription = document.getElementById("products__description")?.innerHTML;
+    let productPrice = document.getElementById("productPrice")?.innerHTML as string | number;
+    let item = document.createElement("div") as HTMLDivElement;
+    item.innerHTML = template;
+    productTitle = product.name;
+    productDescription = product.description;
+    productPrice = product.price;
+    container?.appendChild(item);
+}
 
 }
 
@@ -95,3 +124,17 @@ function initCart() {
         cart[product.name] = 0;
     }
       }
+
+
+
+function renderCart(){
+    
+}
+
+
+
+function increment(name) {
+    console.log("Name: " + name)
+    cart[name]++;
+    renderCart();
+}
