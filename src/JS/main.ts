@@ -1,11 +1,10 @@
-window.onload = (_) => {
-    renderProducts();
-    initCart();
-}
+import { renderProducts, products } from "./renderproducts";
+
+
 
 let addtocart_btn = document.getElementById("productButton") as HTMLButtonElement;
 
-addtocart_btn.addEventListener("click", function(){
+/*addtocart_btn.addEventListener("click", function(){
 
     let productPrice = document.getElementById("productPrice")?.innerHTML;
     let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
@@ -23,58 +22,58 @@ addtocart_btn.addEventListener("click", function(){
             
     }
 }
-)
+)*/
 
-const products =
+/*const products =
 [
     {
-        "name": "Butterkaka",
-        "image": "..images/cake.jpg",
+        name: "Butterkaka",
+        image: "..images/cake.jpg",
         
-        "description": "Mycket fin butterkaka.",
+        description: "Mycket fin butterkaka.",
         
         
-        "price": 59,
+        price: 59,
         id: "product_1"
     },
     {
-        "name": "Gelé någonting",
-        "image": "..images/cake.jpg",
+        name: "Gelé någonting",
+        image: "..images/cake.jpg",
         
-        "description": "Spännande konsistens för alla kulinariska mesar.",
+        description: "Spännande konsistens för alla kulinariska mesar.",
         
         
-        "price": 299,
+        price: 299,
         id: "product_2"
     },
     {
-        "name": "An EXTREMELY spicy sauce",
-        "image": "..images/cake.jpg",
+        name: "An EXTREMELY spicy sauce",
+        image: "..images/cake.jpg",
         
-        "description": "Får dina smaklökar att dansa tango!",
+        description: "Får dina smaklökar att dansa tango!",
         
         
-        "price": 79,
+        price: 79,
         id: "product_3"
     },
     {
-        "name": "I don't even know what this is",
-        "image": "..images/cake.jpg",
+        name: "I don't even know what this is",
+        image: "..images/cake.jpg",
         
-        "description": "Smakar verkligen inte gott.",
+        description: "Smakar verkligen inte gott.",
         
         
-        "price": 59,
+        price: 59,
         id: "product_4"
     },
     {
-        "name": "A unique sandwich",
-        "image": "..images/cake.jpg",
+        name: "A unique sandwich",
+        image: "..images/cake.jpg",
         
-        "description": "An idiot-sandwich.",
+        description: "An idiot-sandwich.",
         
         
-        "price": 59,
+        price: 59,
         id: "product_5"
     }
 ];
@@ -87,12 +86,12 @@ function renderProducts() {
         <img src="./Assets/product1.jfif" alt="photo of product" />
     </article>
     <article class="products__content">
-        <h2 class="products__title" id="product__title">2-pack sweatpants</h2>
+        <h2 class="products__title" id="product__title"></h2>
         <p class="products__description" id="products__description">
             
         </p>
         <article class="products__price" >
-            <p id="productPrice"></p>
+            <p id="productPrice" class="pClass"></p>
         </article>
         <button class="products__button" id="productButton">
             Add to Cart
@@ -102,19 +101,28 @@ function renderProducts() {
 
 const container = document.querySelector("#productCardContainer");
 
+
 for (let product of products) {
-    let productTitle = document.getElementById("product__title")?.innerHTML;
-    let productDescription = document.getElementById("products__description")?.innerHTML;
-    let productPrice = document.getElementById("productPrice")?.innerHTML as string | number;
-    let item = document.createElement("div") as HTMLDivElement;
+    let productTitle = document.getElementById("products__title") as HTMLHeadingElement;
+    let productDescription = document.getElementById("products__description") as HTMLParagraphElement;
+    
+    let productPrice = document.getElementById("productPrice") as HTMLParagraphElement;
+    let item = document.createElement("div");
+    item.classList.add("item");
     item.innerHTML = template;
-    productTitle = product.name;
-    productDescription = product.description;
-    productPrice = product.price;
+    //let productDescription = item.querySelectorAll(".products__description");
+    //productDescription as HTMLParagraphElement = product.description
+    //document.getElementById("products__description")?.innerHTML = product.description;
+    //let test = item.querySelector(".products__description");
+    //test = product.description;
+    productTitle.innerHTML = product.name;
+    productDescription.innerHTML = product.description;
+    productPrice.innerHTML = product.price.toString();
     container?.appendChild(item);
+    
 }
 
-}
+}*/
 
 
 let cart = {};
@@ -137,4 +145,9 @@ function increment(name) {
     console.log("Name: " + name)
     cart[name]++;
     renderCart();
+}
+
+window.onload = () => {
+    renderProducts();
+    initCart();
 }
