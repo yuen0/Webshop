@@ -53,9 +53,11 @@ export function renderProducts() {
 for (let product of products){
 let container = document.getElementById("productsContainer") as HTMLDivElement;
 let createArticle = document.createElement("article") as HTMLDivElement;
+let createSection = document.createElement("section") as HTMLDivElement;
 let addtocartBtn = document.createElement("button") as HTMLButtonElement;
 let addImg = document.createElement("img") as HTMLImageElement;
 let createh2 = document.createElement("h2") as HTMLHeadingElement;
+let createParagraph = document.createElement("p") as HTMLParagraphElement;
 
 let i=0;
 createh2.setAttribute("id", "productname" +i++);
@@ -66,8 +68,15 @@ container.className="products__card";
 container.appendChild(addImg);
 container.appendChild(createArticle);
 container.appendChild(createh2);
+container.appendChild(createSection);
+container.appendChild(createParagraph);
 container.appendChild(addtocartBtn);
+
+
 createh2.innerText = product.name;
+createSection.innerText = product.description;
+createParagraph.innerText = product.price.toString() + " SEK";
+
 addImg.innerHTML = product.image;
 addImg.className="product__images";
 addtocartBtn.innerText = "Add to cart";

@@ -711,9 +711,11 @@ function renderProducts() {
     for (let product of products){
         let container = document.getElementById("productsContainer");
         let createArticle = document.createElement("article");
+        let createSection = document.createElement("section");
         let addtocartBtn = document.createElement("button");
         let addImg = document.createElement("img");
         let createh2 = document.createElement("h2");
+        let createParagraph = document.createElement("p");
         let i = 0;
         createh2.setAttribute("id", "productname" + i++);
         addImg.setAttribute("id", "productimage" + i++);
@@ -723,8 +725,12 @@ function renderProducts() {
         container.appendChild(addImg);
         container.appendChild(createArticle);
         container.appendChild(createh2);
+        container.appendChild(createSection);
+        container.appendChild(createParagraph);
         container.appendChild(addtocartBtn);
         createh2.innerText = product.name;
+        createSection.innerText = product.description;
+        createParagraph.innerText = product.price.toString() + " SEK";
         addImg.innerHTML = product.image;
         addImg.className = "product__images";
         addtocartBtn.innerText = "Add to cart";
