@@ -85,16 +85,6 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   padding: 0;
 }
 
-* .products__button {
-  color: #fff;
-  width: 100%;
-  background-color: #68aaaa;
-  border: none;
-  border-radius: 12px;
-  padding: 12px 0;
-  font-weight: bold;
-}
-
 * body {
   font-size: 14px;
 }
