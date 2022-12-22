@@ -46,8 +46,9 @@ export const products =
         description: "An idiot-sandwich.",
         price: 59,
         id: 5
-    }
+    },
 ];
+
 
 export function renderProducts() {
 for (let product of products){
@@ -59,11 +60,17 @@ let addImg = document.createElement("img") as HTMLImageElement;
 let createh2 = document.createElement("h2") as HTMLHeadingElement;
 let createParagraph = document.createElement("p") as HTMLParagraphElement;
 
-let i=0;
-createh2.setAttribute("id", "productname" +i++);
-addImg.setAttribute("id", "productimage" +i++);
-createArticle.setAttribute("id", "articleContainer" +i++);
-addtocartBtn.setAttribute("class", "products__button");
+let articles = document.getElementsByTagName("article");
+for (let i=0; articles.length > i; i++){
+
+createh2.setAttribute("id", "productname" +i+1);
+addImg.setAttribute("id", "productimage" +i+1);
+createArticle.setAttribute("id", "articleContainer" +i+1);
+addtocartBtn.setAttribute("id", "addtocartBtn" +i+1);
+createSection.setAttribute("id", "productDescription" +i+1);
+createParagraph.setAttribute("id", "productPrice" +i+1);
+
+addtocartBtn.className="products__button";
 container.className="products__card";
 container.appendChild(addImg);
 container.appendChild(createArticle);
@@ -80,7 +87,7 @@ createParagraph.innerText = product.price.toString() + " SEK";
 addImg.innerHTML = product.image;
 addImg.className="product__images";
 addtocartBtn.innerText = "Add to cart";
-
+}
 
 
 

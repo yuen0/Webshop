@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"k3CZ1":[function(require,module,exports) {
+})({"dtgp2":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "f5b03f7dbecd31c8";
+module.bundle.HMR_BUNDLE_ID = "af2c54e399966f83";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -531,259 +531,29 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"2rtbR":[function(require,module,exports) {
-var _renderproducts = require("./renderproducts");
-let addtocart_btn = document.getElementById("productButton");
-/*addtocart_btn.addEventListener("click", function(){
-
-    let productPrice = document.getElementById("productPrice")?.innerHTML;
-    let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
-    let span_total = document.createElement('span') as HTMLSpanElement; 
-      
-        
-    if (document.getElementById("navTotalSum")) {
-    console.log("");
-    
-    } else {
-        hamburgerSection?.appendChild(span_total);
-            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-            span_total.innerText= "Total:" + productPrice;
-            span_total.setAttribute('id', 'navTotalSum');
-            
-    }
-}
-)*/ /*const products =
-[
-    {
-        name: "Butterkaka",
-        image: "..images/cake.jpg",
-        
-        description: "Mycket fin butterkaka.",
-        
-        
-        price: 59,
-        id: "product_1"
-    },
-    {
-        name: "Gelé någonting",
-        image: "..images/cake.jpg",
-        
-        description: "Spännande konsistens för alla kulinariska mesar.",
-        
-        
-        price: 299,
-        id: "product_2"
-    },
-    {
-        name: "An EXTREMELY spicy sauce",
-        image: "..images/cake.jpg",
-        
-        description: "Får dina smaklökar att dansa tango!",
-        
-        
-        price: 79,
-        id: "product_3"
-    },
-    {
-        name: "I don't even know what this is",
-        image: "..images/cake.jpg",
-        
-        description: "Smakar verkligen inte gott.",
-        
-        
-        price: 59,
-        id: "product_4"
-    },
-    {
-        name: "A unique sandwich",
-        image: "..images/cake.jpg",
-        
-        description: "An idiot-sandwich.",
-        
-        
-        price: 59,
-        id: "product_5"
-    }
-];
-
-function renderProducts() {
-
-    const template = 
-    `<article class="products__card" id="productCardContainer">
-    <article class="products__img">
-        <img src="./Assets/product1.jfif" alt="photo of product" />
-    </article>
-    <article class="products__content">
-        <h2 class="products__title" id="product__title"></h2>
-        <p class="products__description" id="products__description">
-            
-        </p>
-        <article class="products__price" >
-            <p id="productPrice" class="pClass"></p>
-        </article>
-        <button class="products__button" id="productButton">
-            Add to Cart
-        </button>
-    </article>
-</article>`  ;
-
-const container = document.querySelector("#productCardContainer");
-
-
-for (let product of products) {
-    let productTitle = document.getElementById("products__title") as HTMLHeadingElement;
-    let productDescription = document.getElementById("products__description") as HTMLParagraphElement;
-    
-    let productPrice = document.getElementById("productPrice") as HTMLParagraphElement;
-    let item = document.createElement("div");
-    item.classList.add("item");
-    item.innerHTML = template;
-    //let productDescription = item.querySelectorAll(".products__description");
-    //productDescription as HTMLParagraphElement = product.description
-    //document.getElementById("products__description")?.innerHTML = product.description;
-    //let test = item.querySelector(".products__description");
-    //test = product.description;
-    productTitle.innerHTML = product.name;
-    productDescription.innerHTML = product.description;
-    productPrice.innerHTML = product.price.toString();
-    container?.appendChild(item);
-    
-}
-
-}*/ let cart = {};
-function initCart() {
-    for (let product of (0, _renderproducts.products))cart[product.name] = 0;
-}
-function renderCart() {}
-function increment(name) {
-    console.log("Name: " + name);
-    cart[name]++;
-    renderCart();
-}
-window.onload = ()=>{
-    (0, _renderproducts.renderProducts)();
-    initCart();
-};
-
-},{"./renderproducts":"cZjRU"}],"cZjRU":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "products", ()=>products);
-parcelHelpers.export(exports, "renderProducts", ()=>renderProducts);
-const products = [
-    {
-        name: "Butterkaka",
-        image: "/images/cake.jpg",
-        description: "Mycket fin butterkaka.",
-        price: 59,
-        id: 1
-    },
-    {
-        name: "Gel\xe9 n\xe5gonting",
-        image: "/images/cake.jpg",
-        description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
-        price: 299,
-        id: 2
-    },
-    {
-        name: "An EXTREMELY spicy sauce",
-        image: "/images/cake.jpg",
-        description: "F\xe5r dina smakl\xf6kar att dansa tango!",
-        price: 79,
-        id: 3
-    },
-    {
-        name: "I don't even know what this is",
-        image: "/images/cake.jpg",
-        description: "Smakar verkligen inte gott.",
-        price: 59,
-        id: 4
-    },
-    {
-        name: "A unique sandwich",
-        image: "/images/cake.jpg",
-        description: "An idiot-sandwich.",
-        price: 59,
-        id: 5
-    }
-];
-function renderProducts() {
-    for (let product of products){
-        let container = document.getElementById("productsContainer");
-        let createArticle = document.createElement("article");
-        let createSection = document.createElement("section");
-        let addtocartBtn = document.createElement("button");
-        let addImg = document.createElement("img");
-        let createh2 = document.createElement("h2");
-        let createParagraph = document.createElement("p");
-        let articles = document.getElementsByTagName("article");
-        for(let i = 0; articles.length > i; i++){
-            createh2.setAttribute("id", "productname" + i + 1);
-            addImg.setAttribute("id", "productimage" + i + 1);
-            createArticle.setAttribute("id", "articleContainer" + i + 1);
-            addtocartBtn.setAttribute("id", "addtocartBtn" + i + 1);
-            createSection.setAttribute("id", "productDescription" + i + 1);
-            createParagraph.setAttribute("id", "productPrice" + i + 1);
-            addtocartBtn.className = "products__button";
-            container.className = "products__card";
-            container.appendChild(addImg);
-            container.appendChild(createArticle);
-            container.appendChild(createh2);
-            container.appendChild(createSection);
-            container.appendChild(createParagraph);
-            container.appendChild(addtocartBtn);
-            createh2.innerText = product.name;
-            createSection.innerText = product.description;
-            createParagraph.innerText = product.price.toString() + " SEK";
-            addImg.innerHTML = product.image;
-            addImg.className = "product__images";
-            addtocartBtn.innerText = "Add to cart";
-        }
-        addtocartBtn.addEventListener("click", ()=>{
-            let productPrice = document.getElementById("productPrice")?.innerHTML;
-            let hamburgerSection = document.getElementById("hamburger");
-            let span_total = document.createElement("span");
-            if (document.getElementById("navTotalSum")) console.log("");
-            else {
-                hamburgerSection?.appendChild(span_total);
-                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-                span_total.innerText = "Total:" + productPrice;
-                span_total.setAttribute("id", "navTotalSum");
-            }
-        });
-    }
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
+},{}],"dkN9q":[function(require,module,exports) {
+var _main = require("./main");
+let productCard = document.querySelector("#productCardContainer");
+let description = document.getElementById("pDescription");
+let title = document.getElementById("pTitle");
+let price = document.getElementById("pPrice");
+let img = document.getElementById("pImg");
+productOnClick();
+renderInfo();
+function productOnClick() {
+    productCard?.addEventListener("click", ()=>{
+        window.location.href = "./pdetails.html";
     });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
+}
+function renderInfo() {
+    for (let product of (0, _main.products))if (product.id === "product_1") {
+        description.innerHTML = product.description;
+        title.innerHTML = product.name;
+        price.innerHTML = product.price.toString() + "SEK";
+        img.style.backgroundImage = `url(${product.image})`;
+    }
+}
 
-},{}]},["k3CZ1","2rtbR"], "2rtbR", "parcelRequire94c2")
+},{"./main":"2rtbR"}]},["dtgp2","dkN9q"], "dkN9q", "parcelRequire94c2")
 
-//# sourceMappingURL=index.becd31c8.js.map
+//# sourceMappingURL=index.99966f83.js.map
