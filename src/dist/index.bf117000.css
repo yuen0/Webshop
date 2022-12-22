@@ -7,7 +7,7 @@ html, body {
 html #header, body #header {
   height: 7%;
   width: 100%;
-  background-color: gray;
+  background-color: #2f4f4f;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -16,7 +16,7 @@ html #header, body #header {
 html #header #navbar, body #header #navbar {
   height: 100%;
   width: 60%;
-  background-color: #bac0c0;
+  background-color: #467676;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -35,12 +35,12 @@ html #header #navbar li, body #header #navbar li {
 }
 
 html #header #navbar li a, body #header #navbar li a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
 html #header #navbar #close, body #header #navbar #close {
-  color: #000;
+  color: #fff;
   padding-bottom: 6%;
   font-size: 1.8em;
   position: absolute;
@@ -56,7 +56,7 @@ html #header #hamburger, body #header #hamburger {
 }
 
 html #header #hamburger i, body #header #hamburger i {
-  color: #000;
+  color: #fff;
   padding-left: .6em;
   font-size: 1.5em;
 }
@@ -173,7 +173,7 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
 .pInfo__container .pInfo__imgContainer .pInfo__img {
   height: 70vh;
   width: inherit;
-  background-image: url("product1.2ff4713e.jfif");
+  background-image: url("product1.e0dc03b7.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
