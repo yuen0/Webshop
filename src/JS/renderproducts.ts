@@ -118,12 +118,8 @@ addtocartBtn?.addEventListener("click", ()=>{
         return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
         })
         if (!found){return;}
-        cart.push(found);
-        //const getItem = localStorage.getItem("cartItem");
-        
         localStorage.setItem("cartItem", JSON.stringify(cart));
-        
-        console.log(cart);
+               
         
 })
 }  
