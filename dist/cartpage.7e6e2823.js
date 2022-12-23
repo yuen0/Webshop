@@ -534,7 +534,7 @@ function hmrAcceptRun(bundle, id) {
 },{}],"htCJt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const cartItems = JSON.parse(localStorage.cartItem);
+let cartItems = JSON.parse(localStorage.cartItem);
 function renderCart() {
     for (let cartItem of cartItems){
         let container = document.getElementById("cart");
@@ -556,9 +556,63 @@ function renderCart() {
         addImg.innerHTML = cartItem.image;
         removeBtn.innerText = "Remove";
         removeBtn.addEventListener("click", ()=>{
-        //cartItems.splice()
+            /*let removeItem = cartItem.children(cartItem.id);
+        if (removeItem) {
+            cartItem.removeChild(removeItem);
+        }*/ cartItems.splice(1, 1);
         });
     }
+    let container1 = document.getElementById("cart");
+    let purchaseBtn = document.createElement("button");
+    let createh1 = document.createElement("h2");
+    let createForm = document.createElement("form");
+    let createInputname = document.createElement("input");
+    let createInputadress = document.createElement("input");
+    let createInputpostnr = document.createElement("input");
+    let createInputcreditcard = document.createElement("input");
+    let fullnameLabel = document.createElement("label");
+    let adressLabel = document.createElement("label");
+    let postnrLabel = document.createElement("label");
+    let bankLabel = document.createElement("label");
+    let creditcardLabel = document.createElement("label");
+    let selectmenu = document.createElement("select");
+    let optionNordea = document.createElement("option");
+    let optionSwedbank = document.createElement("option");
+    let optionHandelsbanken = document.createElement("option");
+    container1.appendChild(createh1);
+    container1.appendChild(createForm);
+    createForm.appendChild(fullnameLabel);
+    createForm.appendChild(createInputname);
+    createForm.appendChild(adressLabel);
+    createForm.appendChild(createInputadress);
+    createForm.appendChild(postnrLabel);
+    createForm.appendChild(createInputpostnr);
+    createForm.appendChild(bankLabel);
+    createForm.appendChild(selectmenu);
+    selectmenu.appendChild(optionNordea);
+    selectmenu.appendChild(optionSwedbank);
+    selectmenu.appendChild(optionHandelsbanken);
+    createForm.appendChild(creditcardLabel);
+    createForm.appendChild(createInputcreditcard);
+    container1.appendChild(purchaseBtn);
+    fullnameLabel.setAttribute("name", "name");
+    adressLabel.setAttribute("name", "adress");
+    postnrLabel.setAttribute("name", "zipcode");
+    creditcardLabel.setAttribute("name", "creditcard");
+    creditcardLabel.innerText = "Please provide your credit card number:";
+    bankLabel.innerText = "Please select your bank from the dropdown menu:";
+    optionNordea.innerText = "Nordea";
+    optionSwedbank.innerText = "Swedbank";
+    optionHandelsbanken.innerText = "Handelsbanken";
+    createh1.innerText = "Where do you want us to send your order?";
+    fullnameLabel.innerText = "Please enter your full name:";
+    adressLabel.innerText = "Please enter your adress:";
+    postnrLabel.innerText = "Please enter your ZIP code:";
+    purchaseBtn.innerText = "Purchase";
+    purchaseBtn.addEventListener("click", ()=>{
+        localStorage.clear();
+    //Till confirmationpage.html
+    });
 }
 window.onload = ()=>{
     renderCart();
