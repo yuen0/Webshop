@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"8t0mY":[function(require,module,exports) {
+})({"bqlFS":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "df7adfd84594b323";
+module.bundle.HMR_BUNDLE_ID = "a6a7d741f932d6df";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -531,31 +531,160 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"dkN9q":[function(require,module,exports) {
+},{}],"2rtbR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cart", ()=>cart);
 var _renderproducts = require("./renderproducts");
-0, _renderproducts.products;
-let productCard = document.querySelector("#productCardContainer");
-let description = document.getElementById("pDescription");
-let title = document.getElementById("pTitle");
-let price = document.getElementById("pPrice");
-let img = document.getElementById("pImg");
-productOnClick();
-//renderInfo();
-function productOnClick() {
-    productCard?.addEventListener("click", ()=>{
-        window.location.href = "./pdetails.html";
+const cart = [];
+function initCart() {
+    for (let product of (0, _renderproducts.products))cart[product.name] = 0;
+}
+function renderCart() {}
+function increment(name) {
+    console.log("Name: " + name);
+    //cart[name]++;
+    renderCart();
+}
+window.onload = ()=>{
+    (0, _renderproducts.renderProducts)();
+    initCart();
+};
+
+},{"./renderproducts":"cZjRU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cZjRU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "products", ()=>products);
+parcelHelpers.export(exports, "renderProducts", ()=>renderProducts);
+var _main = require("./main");
+const products = [
+    {
+        name: "Butterkaka",
+        image: "/images/cake.jpg",
+        description: "Mycket fin butterkaka.",
+        price: 59,
+        id: 1
+    },
+    {
+        name: "Gel\xe9 n\xe5gonting",
+        image: "/images/cake.jpg",
+        description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
+        price: 299,
+        id: 2
+    },
+    {
+        name: "An EXTREMELY spicy sauce",
+        image: "/images/cake.jpg",
+        description: "F\xe5r dina smakl\xf6kar att dansa tango!",
+        price: 79,
+        id: 3
+    },
+    {
+        name: "I don't even know what this is",
+        image: "/images/cake.jpg",
+        description: "Smakar verkligen inte gott.",
+        price: 59,
+        id: 4
+    },
+    {
+        name: "A unique sandwich",
+        image: "/images/cake.jpg",
+        description: "An idiot-sandwich.",
+        price: 59,
+        id: 5
+    }
+];
+function renderProducts() {
+    for (let product of products){
+        let container = document.getElementById("productsContainer");
+        let createArticle = document.createElement("article");
+        let createSection = document.createElement("section");
+        let addtocartBtn = document.createElement("button");
+        let addImg = document.createElement("img");
+        let createh2 = document.createElement("h2");
+        let createParagraph = document.createElement("p");
+        createh2.setAttribute("id", "productname" + product.id);
+        addImg.setAttribute("id", "productimage" + product.id);
+        createArticle.setAttribute("id", "articleContainer" + product.id);
+        addtocartBtn.setAttribute("id", "addtocartBtn" + product.id);
+        createSection.setAttribute("id", "productDescription" + product.id);
+        createParagraph.setAttribute("id", "productPrice" + product.id);
+        addtocartBtn.className = "products__button";
+        container.className = "products__card";
+        container.appendChild(addImg);
+        container.appendChild(createArticle);
+        container.appendChild(createh2);
+        container.appendChild(createSection);
+        container.appendChild(createParagraph);
+        container.appendChild(addtocartBtn);
+        createh2.innerText = product.name;
+        createSection.innerText = product.description;
+        createParagraph.innerText = product.price.toString() + " SEK";
+        addImg.innerHTML = product.image;
+        addImg.className = "product__images";
+        addtocartBtn.innerText = "Add to cart";
+        /*addtocartBtn.addEventListener("click", () =>{
+    cart.push();
+    /*for(let i=0; products.length > i; i++){
+        cart[products[i].price];
+    }
+    let productPrice = cart.values();
+    let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
+    let span_total = document.createElement('span') as HTMLSpanElement; 
+    
+    if (document.getElementById("navTotalSum")) {
+    console.log("");
+    
+    } else {
+        hamburgerSection?.appendChild(span_total);
+            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+            span_total.innerText= "Total:" + productPrice;
+            span_total.setAttribute('id', 'navTotalSum');
+            
+    }
+})*/ addtocartBtn?.addEventListener("click", ()=>{
+            let found = products.find((product)=>{
+                return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
+            });
+            if (!found) return;
+            (0, _main.cart).push(found);
+            //const getItem = localStorage.getItem("cartItem");
+            localStorage.setItem("cartItem", JSON.stringify((0, _main.cart)));
+            console.log((0, _main.cart));
+        });
+    }
+}
+
+},{"./main":"2rtbR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
     });
-} /*function renderInfo() {
-	for (let product of products) {
-		if (product.id === "product_1") {
-			description.innerHTML = product.description;
-			title.innerHTML = product.name;
-			price.innerHTML = product.price.toString();
-			img.style.backgroundImage = `url(${product.image})`;
-		}
-	}
-}*/ 
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
-},{"./renderproducts":"cZjRU"}]},["8t0mY","dkN9q"], "dkN9q", "parcelRequire94c2")
+},{}]},["bqlFS"], null, "parcelRequire94c2")
 
-//# sourceMappingURL=index.4594b323.js.map
+//# sourceMappingURL=cartpage.f932d6df.js.map
