@@ -1,6 +1,14 @@
 import { renderProducts, products } from "./renderproducts";
 
-let cart = [];
+export interface Product{
+    name:string;
+    image: string;
+    description: string;
+    price: number;
+    id: number;
+
+}
+export const cart: Product[]= [];
 
 function initCart() {
 	for (let product of products) {
@@ -12,7 +20,7 @@ function renderCart() {}
 
 function increment(name) {
 	console.log("Name: " + name);
-	cart[name]++;
+	//cart[name]++;
 	renderCart();
 }
 

@@ -1,3 +1,5 @@
+import { cart } from "./main";
+
 export const products =
 [
     {
@@ -60,15 +62,14 @@ let addImg = document.createElement("img") as HTMLImageElement;
 let createh2 = document.createElement("h2") as HTMLHeadingElement;
 let createParagraph = document.createElement("p") as HTMLParagraphElement;
 
-let articles = document.getElementsByTagName("article");
-for (let i=0; articles.length > i; i++){
 
-createh2.setAttribute("id", "productname" +i+1);
-addImg.setAttribute("id", "productimage" +i+1);
-createArticle.setAttribute("id", "articleContainer" +i+1);
-addtocartBtn.setAttribute("id", "addtocartBtn" +i+1);
-createSection.setAttribute("id", "productDescription" +i+1);
-createParagraph.setAttribute("id", "productPrice" +i+1);
+
+createh2.setAttribute("id", "productname" + product.id);
+addImg.setAttribute("id", "productimage" +product.id);
+createArticle.setAttribute("id", "articleContainer" +product.id);
+addtocartBtn.setAttribute("id", "addtocartBtn" +product.id);
+createSection.setAttribute("id", "productDescription" +product.id);
+createParagraph.setAttribute("id", "productPrice" +product.id);
 
 addtocartBtn.className="products__button";
 container.className="products__card";
@@ -87,20 +88,17 @@ createParagraph.innerText = product.price.toString() + " SEK";
 addImg.innerHTML = product.image;
 addImg.className="product__images";
 addtocartBtn.innerText = "Add to cart";
-}
 
 
-
-
-
-
-
-
-addtocartBtn.addEventListener("click", () =>{
-    let productPrice = document.getElementById("productPrice")?.innerHTML;
+/*addtocartBtn.addEventListener("click", () =>{
+    cart.push();
+    /*for(let i=0; products.length > i; i++){
+        cart[products[i].price];
+    }
+    let productPrice = cart.values();
     let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
     let span_total = document.createElement('span') as HTMLSpanElement; 
-              
+    
     if (document.getElementById("navTotalSum")) {
     console.log("");
     
@@ -111,10 +109,26 @@ addtocartBtn.addEventListener("click", () =>{
             span_total.setAttribute('id', 'navTotalSum');
             
     }
-})
+})*/
 
-
-}
+addtocartBtn?.addEventListener("click", ()=>{
     
-
+    let found = products.find((product)=>{
+        
+        return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
+        })
+        if (!found){return;}
+        cart.push(found);
+        //const getItem = localStorage.getItem("cartItem");
+        
+        localStorage.setItem("cartItem", JSON.stringify(cart));
+        
+        console.log(cart);
+        
+})
+}  
 }
+
+
+
+

@@ -1,4 +1,6 @@
-import { products } from "./main";
+import { products, renderProducts } from "./renderproducts";
+
+products
 let productCard = document.querySelector(
 	"#productCardContainer"
 ) as HTMLDivElement;
@@ -9,7 +11,7 @@ let title = document.getElementById("pTitle") as HTMLHeadingElement;
 let price = document.getElementById("pPrice") as HTMLDivElement;
 let img = document.getElementById("pImg") as HTMLDivElement;
 productOnClick();
-renderInfo();
+//renderInfo();
 
 function productOnClick() {
 	productCard?.addEventListener("click", () => {
@@ -17,7 +19,7 @@ function productOnClick() {
 	});
 }
 
-function renderInfo() {
+/*function renderInfo() {
 	for (let product of products) {
 		if (product.id === "product_1") {
 			description.innerHTML = product.description;
@@ -26,4 +28,4 @@ function renderInfo() {
 			img.style.backgroundImage = `url(${product.image})`;
 		}
 	}
-}
+}*/

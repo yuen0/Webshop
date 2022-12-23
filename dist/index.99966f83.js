@@ -532,28 +532,30 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"dkN9q":[function(require,module,exports) {
-var _main = require("./main");
+var _renderproducts = require("./renderproducts");
+0, _renderproducts.products;
 let productCard = document.querySelector("#productCardContainer");
 let description = document.getElementById("pDescription");
 let title = document.getElementById("pTitle");
 let price = document.getElementById("pPrice");
 let img = document.getElementById("pImg");
 productOnClick();
-renderInfo();
+//renderInfo();
 function productOnClick() {
     productCard?.addEventListener("click", ()=>{
         window.location.href = "./pdetails.html";
     });
-}
-function renderInfo() {
-    for (let product of (0, _main.products))if (product.id === "product_1") {
-        description.innerHTML = product.description;
-        title.innerHTML = product.name;
-        price.innerHTML = product.price.toString() + "SEK";
-        img.style.backgroundImage = `url(${product.image})`;
-    }
-}
+} /*function renderInfo() {
+	for (let product of products) {
+		if (product.id === "product_1") {
+			description.innerHTML = product.description;
+			title.innerHTML = product.name;
+			price.innerHTML = product.price.toString();
+			img.style.backgroundImage = `url(${product.image})`;
+		}
+	}
+}*/ 
 
-},{"./main":"2rtbR"}]},["dtgp2","dkN9q"], "dkN9q", "parcelRequire94c2")
+},{"./renderproducts":"cZjRU"}]},["dtgp2","dkN9q"], "dkN9q", "parcelRequire94c2")
 
 //# sourceMappingURL=index.99966f83.js.map
