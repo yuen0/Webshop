@@ -118,6 +118,7 @@ addtocartBtn?.addEventListener("click", ()=>{
         return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
         })
         if (!found){return;}
+        cart.push(found);
         localStorage.setItem("cartItem", JSON.stringify(cart));
                
         
