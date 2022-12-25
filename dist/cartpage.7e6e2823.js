@@ -537,12 +537,9 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "cartItems", ()=>cartItems);
 const cartItems = JSON.parse(localStorage.cartItem);
 // function pageload(){if (!cartItems) {return;}}
-//let cartItemsKey = localStorage.getItem(localStorage.cartItem);
-//let cartitemsKey2 = JSON.parse(localStorage.cartitemsKey);
 let totalSum = cartItems.reduce(function(acc, obj) {
     return acc + obj.price;
 }, 0);
-//console.log(totalSum);
 function renderCart() {
     for (let cartItem of cartItems){
         let container = document.getElementById("cart");

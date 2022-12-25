@@ -534,8 +534,9 @@ function hmrAcceptRun(bundle, id) {
 },{}],"htCJt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "cartItems", ()=>cartItems);
-let cartItems = JSON.parse(localStorage.cartItem);
+parcelHelpers.export(exports, "cartItemss", ()=>cartItemss);
+const cartItemss = JSON.parse(localStorage.cartItem);
+const cartItems = JSON.parse(localStorage.cartItem);
 // function pageload(){if (!cartItems) {return;}}
 //let cartItemsKey = localStorage.getItem(localStorage.cartItem);
 //let cartitemsKey2 = JSON.parse(localStorage.cartitemsKey);
