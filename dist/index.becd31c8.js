@@ -537,13 +537,14 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "cart", ()=>cart);
 var _renderproducts = require("./renderproducts");
-const cart = [];
-function initCart() {
-    for (let product of (0, _renderproducts.products))cart[product.name] = 0;
-}
-window.onload = ()=>{
+let cart = [];
+/*function initCart() {
+	for (let product of products) {
+		cart[product.name] = 0;
+	}
+}*/ window.onload = ()=>{
     (0, _renderproducts.renderProducts)();
-    initCart();
+//initCart();
 //pageload();
 //lsonload();
 };
@@ -621,32 +622,7 @@ function renderProducts() {
         addImg.innerHTML = product.image;
         addImg.className = "product__images";
         addtocartBtn.innerText = "Add to cart";
-        /*addtocartBtn.addEventListener("click", () =>{
-    cart.push();
-    /*for(let i=0; products.length > i; i++){
-        cart[products[i].price];
-    }
-    let productPrice = cart.values();
-    let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
-    let span_total = document.createElement('span') as HTMLSpanElement; 
-    
-    if (document.getElementById("navTotalSum")) {
-    return;
-    
-    } else {
-        hamburgerSection?.appendChild(span_total);
-            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-            span_total.innerText= "Total:" + productPrice;
-            span_total.setAttribute('id', 'navTotalSum');
-            
-    }
-})*/ /*function add(price){
-    for (let i = 0; i < cart.length; i++) {
-        const element = cart[i].price + price;
-        return element;
-        
-    }
-}*/ addtocartBtn?.addEventListener("click", ()=>{
+        addtocartBtn?.addEventListener("click", ()=>{
             let found = products.find((product)=>{
                 return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
             });

@@ -1,4 +1,5 @@
 //import { totalSum } from "./cart";
+import { cartItems } from "./cart";
 import { cart } from "./main";
 
 
@@ -90,36 +91,6 @@ createParagraph.innerText = product.price.toString() + " SEK";
 addImg.innerHTML = product.image;
 addImg.className="product__images";
 addtocartBtn.innerText = "Add to cart";
-
-
-/*addtocartBtn.addEventListener("click", () =>{
-    cart.push();
-    /*for(let i=0; products.length > i; i++){
-        cart[products[i].price];
-    }
-    let productPrice = cart.values();
-    let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
-    let span_total = document.createElement('span') as HTMLSpanElement; 
-    
-    if (document.getElementById("navTotalSum")) {
-    return;
-    
-    } else {
-        hamburgerSection?.appendChild(span_total);
-            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-            span_total.innerText= "Total:" + productPrice;
-            span_total.setAttribute('id', 'navTotalSum');
-            
-    }
-})*/
-
-/*function add(price){
-    for (let i = 0; i < cart.length; i++) {
-        const element = cart[i].price + price;
-        return element;
-        
-    }
-}*/
 
 addtocartBtn?.addEventListener("click", ()=>{
     

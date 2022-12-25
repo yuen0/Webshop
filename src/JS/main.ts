@@ -1,4 +1,5 @@
 //import { lsonload, pageload } from "./cart";
+import { cartItems } from "./cart";
 import { renderProducts, products } from "./renderproducts";
 
 
@@ -12,17 +13,17 @@ export interface Product{
     id: number;
 
 }
-export const cart: Product[]= [];
+export let cart:Product[] = [];
 
-function initCart() {
+/*function initCart() {
 	for (let product of products) {
 		cart[product.name] = 0;
 	}
-}
+}*/
 
 window.onload = () => {
 	renderProducts();
-	initCart();
+	//initCart();
 	//pageload();
 	//lsonload();
 };

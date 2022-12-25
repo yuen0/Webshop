@@ -534,9 +534,8 @@ function hmrAcceptRun(bundle, id) {
 },{}],"htCJt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-/* function lsonload(){
-    localStorage.setItem("cartItem", JSON.stringify(cart));
-}*/ let cartItems = JSON.parse(localStorage.cartItem);
+parcelHelpers.export(exports, "cartItems", ()=>cartItems);
+const cartItems = JSON.parse(localStorage.cartItem);
 // function pageload(){if (!cartItems) {return;}}
 //let cartItemsKey = localStorage.getItem(localStorage.cartItem);
 //let cartitemsKey2 = JSON.parse(localStorage.cartitemsKey);

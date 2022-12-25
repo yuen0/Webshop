@@ -4,7 +4,7 @@ import { products, renderProducts } from "./renderproducts";
 /* function lsonload(){
     localStorage.setItem("cartItem", JSON.stringify(cart));
 }*/
-let cartItems = JSON.parse(localStorage.cartItem);
+export const cartItems = JSON.parse(localStorage.cartItem);
 // function pageload(){if (!cartItems) {return;}}
 //let cartItemsKey = localStorage.getItem(localStorage.cartItem);
 //let cartitemsKey2 = JSON.parse(localStorage.cartitemsKey);
