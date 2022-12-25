@@ -1,4 +1,6 @@
+//import { totalSum } from "./cart";
 import { cart } from "./main";
+
 
 export const products =
 [
@@ -100,7 +102,7 @@ addtocartBtn.innerText = "Add to cart";
     let span_total = document.createElement('span') as HTMLSpanElement; 
     
     if (document.getElementById("navTotalSum")) {
-    console.log("");
+    return;
     
     } else {
         hamburgerSection?.appendChild(span_total);
@@ -111,6 +113,14 @@ addtocartBtn.innerText = "Add to cart";
     }
 })*/
 
+/*function add(price){
+    for (let i = 0; i < cart.length; i++) {
+        const element = cart[i].price + price;
+        return element;
+        
+    }
+}*/
+
 addtocartBtn?.addEventListener("click", ()=>{
     
     let found = products.find((product)=>{
@@ -120,9 +130,33 @@ addtocartBtn?.addEventListener("click", ()=>{
         if (!found){return;}
         cart.push(found);
         localStorage.setItem("cartItem", JSON.stringify(cart));
-               
         
-})
+        
+        let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
+        let span_total = document.createElement('span') as HTMLSpanElement;
+        let showTotal = document.getElementById('navTotalSum') as HTMLSpanElement;
+        let totalSum = cart.reduce(function (acc, obj) { return acc + obj.price;}, 0);
+        
+    
+        if (document.getElementById("navTotalSum")) {
+        hamburgerSection.removeChild(showTotal);
+        hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+        span_total.innerText= "Total:" + totalSum + " SEK";
+        span_total.setAttribute('id', 'navTotalSum');
+
+    
+        } else {
+            
+            hamburgerSection?.appendChild(span_total);
+            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+            span_total.innerText= "Total:" + totalSum + " SEK";
+            span_total.setAttribute('id', 'navTotalSum');
+            
+            
+        }
+        
+        
+}   )
 }  
 }
 

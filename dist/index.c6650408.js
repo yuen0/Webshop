@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"diqOB":[function(require,module,exports) {
+})({"f2F2y":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "1d5af7417e6e2823";
+module.bundle.HMR_BUNDLE_ID = "8a780b17c6650408";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -531,107 +531,139 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"htCJt":[function(require,module,exports) {
+},{}],"2rtbR":[function(require,module,exports) {
+//import { lsonload, pageload } from "./cart";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-/* function lsonload(){
-    localStorage.setItem("cartItem", JSON.stringify(cart));
-}*/ let cartItems = JSON.parse(localStorage.cartItem);
-// function pageload(){if (!cartItems) {return;}}
-//let cartItemsKey = localStorage.getItem(localStorage.cartItem);
-//let cartitemsKey2 = JSON.parse(localStorage.cartitemsKey);
-let totalSum = cartItems.reduce(function(acc, obj) {
-    return acc + obj.price;
-}, 0);
-//console.log(totalSum);
-function renderCart() {
-    for (let cartItem of cartItems){
-        let container = document.getElementById("cart");
+parcelHelpers.export(exports, "cart", ()=>cart);
+var _renderproducts = require("./renderproducts");
+const cart = [];
+function initCart() {
+    for (let product of (0, _renderproducts.products))cart[product.name] = 0;
+}
+window.onload = ()=>{
+    (0, _renderproducts.renderProducts)();
+    initCart();
+//pageload();
+//lsonload();
+};
+
+},{"./renderproducts":"cZjRU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cZjRU":[function(require,module,exports) {
+//import { totalSum } from "./cart";
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "products", ()=>products);
+parcelHelpers.export(exports, "renderProducts", ()=>renderProducts);
+var _main = require("./main");
+const products = [
+    {
+        name: "Butterkaka",
+        image: "/images/cake.jpg",
+        description: "Mycket fin butterkaka.",
+        price: 59,
+        id: 1
+    },
+    {
+        name: "Gel\xe9 n\xe5gonting",
+        image: "/images/cake.jpg",
+        description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
+        price: 299,
+        id: 2
+    },
+    {
+        name: "An EXTREMELY spicy sauce",
+        image: "/images/cake.jpg",
+        description: "F\xe5r dina smakl\xf6kar att dansa tango!",
+        price: 79,
+        id: 3
+    },
+    {
+        name: "I don't even know what this is",
+        image: "/images/cake.jpg",
+        description: "Smakar verkligen inte gott.",
+        price: 59,
+        id: 4
+    },
+    {
+        name: "A unique sandwich",
+        image: "/images/cake.jpg",
+        description: "An idiot-sandwich.",
+        price: 59,
+        id: 5
+    }
+];
+function renderProducts() {
+    for (let product of products){
+        let container = document.getElementById("productsContainer");
         let createArticle = document.createElement("article");
         let createSection = document.createElement("section");
-        let removeBtn = document.createElement("button");
+        let addtocartBtn = document.createElement("button");
         let addImg = document.createElement("img");
         let createh2 = document.createElement("h2");
         let createParagraph = document.createElement("p");
+        createh2.setAttribute("id", "productname" + product.id);
+        addImg.setAttribute("id", "productimage" + product.id);
+        createArticle.setAttribute("id", "articleContainer" + product.id);
+        addtocartBtn.setAttribute("id", "addtocartBtn" + product.id);
+        createSection.setAttribute("id", "productDescription" + product.id);
+        createParagraph.setAttribute("id", "productPrice" + product.id);
+        addtocartBtn.className = "products__button";
+        container.className = "products__card";
         container.appendChild(addImg);
         container.appendChild(createArticle);
         container.appendChild(createh2);
         container.appendChild(createSection);
         container.appendChild(createParagraph);
-        container.appendChild(removeBtn);
-        createh2.innerText = cartItem.name;
-        createSection.innerText = cartItem.description;
-        createParagraph.innerText = cartItem.price.toString() + " SEK";
-        addImg.innerHTML = cartItem.image;
-        removeBtn.innerText = "Remove";
-        removeBtn.addEventListener("click", ()=>{
-            /*let removeItem = cartItem.children(cartItem.id);
-        if (removeItem) {
-            cartItem.removeChild(removeItem);
-        }*/ cartItems.splice(1);
-        //localStorage.setItem("cartItem", JSON.stringify(cartItems));
-        });
+        container.appendChild(addtocartBtn);
+        createh2.innerText = product.name;
+        createSection.innerText = product.description;
+        createParagraph.innerText = product.price.toString() + " SEK";
+        addImg.innerHTML = product.image;
+        addImg.className = "product__images";
+        addtocartBtn.innerText = "Add to cart";
+        /*addtocartBtn.addEventListener("click", () =>{
+    cart.push();
+    /*for(let i=0; products.length > i; i++){
+        cart[products[i].price];
     }
-    let container1 = document.getElementById("cart");
-    let purchaseBtn = document.createElement("button");
-    let createh1 = document.createElement("h2");
-    let createForm = document.createElement("form");
-    let createInputname = document.createElement("input");
-    let createInputadress = document.createElement("input");
-    let createInputpostnr = document.createElement("input");
-    let createInputcreditcard = document.createElement("input");
-    let fullnameLabel = document.createElement("label");
-    let adressLabel = document.createElement("label");
-    let postnrLabel = document.createElement("label");
-    let bankLabel = document.createElement("label");
-    let creditcardLabel = document.createElement("label");
-    let selectmenu = document.createElement("select");
-    let optionNordea = document.createElement("option");
-    let optionSwedbank = document.createElement("option");
-    let optionHandelsbanken = document.createElement("option");
-    let createH3 = document.createElement("h3");
-    container1.appendChild(createH3);
-    container1.appendChild(createh1);
-    container1.appendChild(createForm);
-    createForm.appendChild(fullnameLabel);
-    createForm.appendChild(createInputname);
-    createForm.appendChild(adressLabel);
-    createForm.appendChild(createInputadress);
-    createForm.appendChild(postnrLabel);
-    createForm.appendChild(createInputpostnr);
-    createForm.appendChild(bankLabel);
-    createForm.appendChild(selectmenu);
-    selectmenu.appendChild(optionNordea);
-    selectmenu.appendChild(optionSwedbank);
-    selectmenu.appendChild(optionHandelsbanken);
-    createForm.appendChild(creditcardLabel);
-    createForm.appendChild(createInputcreditcard);
-    container1.appendChild(purchaseBtn);
-    fullnameLabel.setAttribute("name", "name");
-    adressLabel.setAttribute("name", "adress");
-    postnrLabel.setAttribute("name", "zipcode");
-    creditcardLabel.setAttribute("name", "creditcard");
-    createH3.innerText = "Total: " + totalSum + " SEK";
-    creditcardLabel.innerText = "Please provide your credit card number:";
-    bankLabel.innerText = "Please select your bank from the dropdown menu:";
-    optionNordea.innerText = "Nordea";
-    optionSwedbank.innerText = "Swedbank";
-    optionHandelsbanken.innerText = "Handelsbanken";
-    createh1.innerText = "Where do you want us to send your order?";
-    fullnameLabel.innerText = "Please enter your full name:";
-    adressLabel.innerText = "Please enter your adress:";
-    postnrLabel.innerText = "Please enter your ZIP code:";
-    purchaseBtn.innerText = "Purchase";
-    purchaseBtn.addEventListener("click", ()=>{
-        localStorage.clear();
-    //Till confirmationpage.html
-    });
+    let productPrice = cart.values();
+    let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
+    let span_total = document.createElement('span') as HTMLSpanElement; 
+    
+    if (document.getElementById("navTotalSum")) {
+    return;
+    
+    } else {
+        hamburgerSection?.appendChild(span_total);
+            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+            span_total.innerText= "Total:" + productPrice;
+            span_total.setAttribute('id', 'navTotalSum');
+            
+    }
+})*/ addtocartBtn?.addEventListener("click", ()=>{
+            let found = products.find((product)=>{
+                return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
+            });
+            if (!found) return;
+            (0, _main.cart).push(found);
+            localStorage.setItem("cartItem", JSON.stringify((0, _main.cart)));
+        /*let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
+        let span_total = document.createElement('span') as HTMLSpanElement; 
+    
+        if (document.getElementById("navTotalSum")) {
+        return;
+    
+        } else {
+        hamburgerSection?.appendChild(span_total);
+            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+            span_total.innerText= "Total:" + totalSum.toString() + " SEK";
+            span_total.setAttribute('id', 'navTotalSum');
+            
+        }*/ });
+    }
 }
-window.onload = ()=>{
-    renderCart();
-};
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"./main":"2rtbR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -661,6 +693,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["diqOB","htCJt"], "htCJt", "parcelRequire94c2")
+},{}]},["f2F2y"], null, "parcelRequire94c2")
 
-//# sourceMappingURL=cartpage.7e6e2823.js.map
+//# sourceMappingURL=index.c6650408.js.map

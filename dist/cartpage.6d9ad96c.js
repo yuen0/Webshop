@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"diqOB":[function(require,module,exports) {
+})({"8jrg4":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "1d5af7417e6e2823";
+module.bundle.HMR_BUNDLE_ID = "57e198ae6d9ad96c";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -589,8 +589,6 @@ function renderCart() {
     let optionNordea = document.createElement("option");
     let optionSwedbank = document.createElement("option");
     let optionHandelsbanken = document.createElement("option");
-    let createH3 = document.createElement("h3");
-    container1.appendChild(createH3);
     container1.appendChild(createh1);
     container1.appendChild(createForm);
     createForm.appendChild(fullnameLabel);
@@ -611,7 +609,6 @@ function renderCart() {
     adressLabel.setAttribute("name", "adress");
     postnrLabel.setAttribute("name", "zipcode");
     creditcardLabel.setAttribute("name", "creditcard");
-    createH3.innerText = "Total: " + totalSum + " SEK";
     creditcardLabel.innerText = "Please provide your credit card number:";
     bankLabel.innerText = "Please select your bank from the dropdown menu:";
     optionNordea.innerText = "Nordea";
@@ -661,6 +658,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["diqOB","htCJt"], "htCJt", "parcelRequire94c2")
+},{}]},["8jrg4"], null, "parcelRequire94c2")
 
-//# sourceMappingURL=cartpage.7e6e2823.js.map
+//# sourceMappingURL=cartpage.6d9ad96c.js.map

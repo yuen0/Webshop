@@ -1,4 +1,8 @@
+//import { lsonload, pageload } from "./cart";
 import { renderProducts, products } from "./renderproducts";
+
+
+
 
 export interface Product{
     name:string;
@@ -16,15 +20,14 @@ function initCart() {
 	}
 }
 
-function renderCart() {}
-
-function increment(name) {
-	console.log("Name: " + name);
-	//cart[name]++;
-	renderCart();
-}
-
 window.onload = () => {
 	renderProducts();
 	initCart();
+	//pageload();
+	//lsonload();
 };
+
+
+
+
+

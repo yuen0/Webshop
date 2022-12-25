@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"diqOB":[function(require,module,exports) {
+})({"1LVJz":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "1d5af7417e6e2823";
+module.bundle.HMR_BUNDLE_ID = "82119cb1025b14da";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -532,18 +532,20 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"htCJt":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-/* function lsonload(){
-    localStorage.setItem("cartItem", JSON.stringify(cart));
-}*/ let cartItems = JSON.parse(localStorage.cartItem);
-// function pageload(){if (!cartItems) {return;}}
+var _main = require("./main");
+function lsonload() {
+    localStorage.setItem("cartItem", JSON.stringify((0, _main.cart)));
+}
+let cartItems = JSON.parse(localStorage.cartItem);
+function pageload() {
+    if (!cartItems) return;
+}
 //let cartItemsKey = localStorage.getItem(localStorage.cartItem);
 //let cartitemsKey2 = JSON.parse(localStorage.cartitemsKey);
-let totalSum = cartItems.reduce(function(acc, obj) {
+const totalSum = cartItems.reduce(function(acc, obj) {
     return acc + obj.price;
 }, 0);
-//console.log(totalSum);
+console.log(totalSum);
 function renderCart() {
     for (let cartItem of cartItems){
         let container = document.getElementById("cart");
@@ -589,8 +591,6 @@ function renderCart() {
     let optionNordea = document.createElement("option");
     let optionSwedbank = document.createElement("option");
     let optionHandelsbanken = document.createElement("option");
-    let createH3 = document.createElement("h3");
-    container1.appendChild(createH3);
     container1.appendChild(createh1);
     container1.appendChild(createForm);
     createForm.appendChild(fullnameLabel);
@@ -611,7 +611,6 @@ function renderCart() {
     adressLabel.setAttribute("name", "adress");
     postnrLabel.setAttribute("name", "zipcode");
     creditcardLabel.setAttribute("name", "creditcard");
-    createH3.innerText = "Total: " + totalSum + " SEK";
     creditcardLabel.innerText = "Please provide your credit card number:";
     bankLabel.innerText = "Please select your bank from the dropdown menu:";
     optionNordea.innerText = "Nordea";
@@ -631,36 +630,6 @@ window.onload = ()=>{
     renderCart();
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
+},{"./main":"2rtbR"}]},["1LVJz"], null, "parcelRequire94c2")
 
-},{}]},["diqOB","htCJt"], "htCJt", "parcelRequire94c2")
-
-//# sourceMappingURL=cartpage.7e6e2823.js.map
+//# sourceMappingURL=cartpage.025b14da.js.map

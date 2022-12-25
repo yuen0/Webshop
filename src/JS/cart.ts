@@ -1,7 +1,16 @@
-import { Product } from "./main";
+import { cart, Product } from "./main";
 import { products, renderProducts } from "./renderproducts";
 
+/* function lsonload(){
+    localStorage.setItem("cartItem", JSON.stringify(cart));
+}*/
 let cartItems = JSON.parse(localStorage.cartItem);
+// function pageload(){if (!cartItems) {return;}}
+//let cartItemsKey = localStorage.getItem(localStorage.cartItem);
+//let cartitemsKey2 = JSON.parse(localStorage.cartitemsKey);
+let totalSum = cartItems.reduce(function (acc, obj) { return acc + obj.price; }, 0);
+    //console.log(totalSum);
+
 
 
 
@@ -36,7 +45,8 @@ function renderCart(){
         if (removeItem) {
             cartItem.removeChild(removeItem);
         }*/
-        cartItems.splice(1, 1);
+        cartItems.splice(1);
+        //localStorage.setItem("cartItem", JSON.stringify(cartItems));
         
        
         
@@ -61,7 +71,9 @@ function renderCart(){
     let optionNordea = document.createElement("option") as HTMLOptionElement;
     let optionSwedbank = document.createElement("option") as HTMLOptionElement;
     let optionHandelsbanken = document.createElement("option") as HTMLOptionElement;
+    let createH3 = document.createElement("h3") as HTMLHeadingElement;
         
+    container.appendChild(createH3);
     container.appendChild(createh1);
     container.appendChild(createForm);
     createForm.appendChild(fullnameLabel);
@@ -83,6 +95,7 @@ function renderCart(){
     adressLabel.setAttribute("name", "adress");
     postnrLabel.setAttribute("name", "zipcode");
     creditcardLabel.setAttribute("name", "creditcard");
+    createH3.innerText = "Total: " + totalSum + " SEK"
     creditcardLabel.innerText = "Please provide your credit card number:"
     bankLabel.innerText = "Please select your bank from the dropdown menu:"
     optionNordea.innerText = "Nordea";
@@ -98,10 +111,14 @@ function renderCart(){
         localStorage.clear();
         //Till confirmationpage.html
     });
+
+    
+    
 }
 
 window.onload = () => {
     renderCart();
+   
 }
     
 

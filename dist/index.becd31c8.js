@@ -532,6 +532,7 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"2rtbR":[function(require,module,exports) {
+//import { lsonload, pageload } from "./cart";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "cart", ()=>cart);
@@ -540,18 +541,15 @@ const cart = [];
 function initCart() {
     for (let product of (0, _renderproducts.products))cart[product.name] = 0;
 }
-function renderCart() {}
-function increment(name) {
-    console.log("Name: " + name);
-    //cart[name]++;
-    renderCart();
-}
 window.onload = ()=>{
     (0, _renderproducts.renderProducts)();
     initCart();
+//pageload();
+//lsonload();
 };
 
 },{"./renderproducts":"cZjRU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cZjRU":[function(require,module,exports) {
+//import { totalSum } from "./cart";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "products", ()=>products);
@@ -633,7 +631,7 @@ function renderProducts() {
     let span_total = document.createElement('span') as HTMLSpanElement; 
     
     if (document.getElementById("navTotalSum")) {
-    console.log("");
+    return;
     
     } else {
         hamburgerSection?.appendChild(span_total);
@@ -642,13 +640,36 @@ function renderProducts() {
             span_total.setAttribute('id', 'navTotalSum');
             
     }
-})*/ addtocartBtn?.addEventListener("click", ()=>{
+})*/ /*function add(price){
+    for (let i = 0; i < cart.length; i++) {
+        const element = cart[i].price + price;
+        return element;
+        
+    }
+}*/ addtocartBtn?.addEventListener("click", ()=>{
             let found = products.find((product)=>{
                 return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
             });
             if (!found) return;
             (0, _main.cart).push(found);
             localStorage.setItem("cartItem", JSON.stringify((0, _main.cart)));
+            let hamburgerSection = document.getElementById("hamburger");
+            let span_total = document.createElement("span");
+            let showTotal = document.getElementById("navTotalSum");
+            let totalSum = (0, _main.cart).reduce(function(acc, obj) {
+                return acc + obj.price;
+            }, 0);
+            if (document.getElementById("navTotalSum")) {
+                hamburgerSection.removeChild(showTotal);
+                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+                span_total.innerText = "Total:" + totalSum + " SEK";
+                span_total.setAttribute("id", "navTotalSum");
+            } else {
+                hamburgerSection?.appendChild(span_total);
+                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+                span_total.innerText = "Total:" + totalSum + " SEK";
+                span_total.setAttribute("id", "navTotalSum");
+            }
         });
     }
 }

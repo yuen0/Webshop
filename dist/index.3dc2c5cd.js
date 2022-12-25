@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"diqOB":[function(require,module,exports) {
+})({"ewxtM":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "1d5af7417e6e2823";
+module.bundle.HMR_BUNDLE_ID = "e9daf68b3dc2c5cd";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -531,136 +531,23 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"htCJt":[function(require,module,exports) {
+},{}],"2rtbR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-/* function lsonload(){
-    localStorage.setItem("cartItem", JSON.stringify(cart));
-}*/ let cartItems = JSON.parse(localStorage.cartItem);
-// function pageload(){if (!cartItems) {return;}}
-//let cartItemsKey = localStorage.getItem(localStorage.cartItem);
-//let cartitemsKey2 = JSON.parse(localStorage.cartitemsKey);
-let totalSum = cartItems.reduce(function(acc, obj) {
-    return acc + obj.price;
-}, 0);
-//console.log(totalSum);
-function renderCart() {
-    for (let cartItem of cartItems){
-        let container = document.getElementById("cart");
-        let createArticle = document.createElement("article");
-        let createSection = document.createElement("section");
-        let removeBtn = document.createElement("button");
-        let addImg = document.createElement("img");
-        let createh2 = document.createElement("h2");
-        let createParagraph = document.createElement("p");
-        container.appendChild(addImg);
-        container.appendChild(createArticle);
-        container.appendChild(createh2);
-        container.appendChild(createSection);
-        container.appendChild(createParagraph);
-        container.appendChild(removeBtn);
-        createh2.innerText = cartItem.name;
-        createSection.innerText = cartItem.description;
-        createParagraph.innerText = cartItem.price.toString() + " SEK";
-        addImg.innerHTML = cartItem.image;
-        removeBtn.innerText = "Remove";
-        removeBtn.addEventListener("click", ()=>{
-            /*let removeItem = cartItem.children(cartItem.id);
-        if (removeItem) {
-            cartItem.removeChild(removeItem);
-        }*/ cartItems.splice(1);
-        //localStorage.setItem("cartItem", JSON.stringify(cartItems));
-        });
-    }
-    let container1 = document.getElementById("cart");
-    let purchaseBtn = document.createElement("button");
-    let createh1 = document.createElement("h2");
-    let createForm = document.createElement("form");
-    let createInputname = document.createElement("input");
-    let createInputadress = document.createElement("input");
-    let createInputpostnr = document.createElement("input");
-    let createInputcreditcard = document.createElement("input");
-    let fullnameLabel = document.createElement("label");
-    let adressLabel = document.createElement("label");
-    let postnrLabel = document.createElement("label");
-    let bankLabel = document.createElement("label");
-    let creditcardLabel = document.createElement("label");
-    let selectmenu = document.createElement("select");
-    let optionNordea = document.createElement("option");
-    let optionSwedbank = document.createElement("option");
-    let optionHandelsbanken = document.createElement("option");
-    let createH3 = document.createElement("h3");
-    container1.appendChild(createH3);
-    container1.appendChild(createh1);
-    container1.appendChild(createForm);
-    createForm.appendChild(fullnameLabel);
-    createForm.appendChild(createInputname);
-    createForm.appendChild(adressLabel);
-    createForm.appendChild(createInputadress);
-    createForm.appendChild(postnrLabel);
-    createForm.appendChild(createInputpostnr);
-    createForm.appendChild(bankLabel);
-    createForm.appendChild(selectmenu);
-    selectmenu.appendChild(optionNordea);
-    selectmenu.appendChild(optionSwedbank);
-    selectmenu.appendChild(optionHandelsbanken);
-    createForm.appendChild(creditcardLabel);
-    createForm.appendChild(createInputcreditcard);
-    container1.appendChild(purchaseBtn);
-    fullnameLabel.setAttribute("name", "name");
-    adressLabel.setAttribute("name", "adress");
-    postnrLabel.setAttribute("name", "zipcode");
-    creditcardLabel.setAttribute("name", "creditcard");
-    createH3.innerText = "Total: " + totalSum + " SEK";
-    creditcardLabel.innerText = "Please provide your credit card number:";
-    bankLabel.innerText = "Please select your bank from the dropdown menu:";
-    optionNordea.innerText = "Nordea";
-    optionSwedbank.innerText = "Swedbank";
-    optionHandelsbanken.innerText = "Handelsbanken";
-    createh1.innerText = "Where do you want us to send your order?";
-    fullnameLabel.innerText = "Please enter your full name:";
-    adressLabel.innerText = "Please enter your adress:";
-    postnrLabel.innerText = "Please enter your ZIP code:";
-    purchaseBtn.innerText = "Purchase";
-    purchaseBtn.addEventListener("click", ()=>{
-        localStorage.clear();
-    //Till confirmationpage.html
-    });
+parcelHelpers.export(exports, "cart", ()=>cart);
+var _cart = require("./cart");
+var _renderproducts = require("./renderproducts");
+const cart = [];
+function initCart() {
+    for (let product of (0, _renderproducts.products))cart[product.name] = 0;
 }
 window.onload = ()=>{
-    renderCart();
+    (0, _renderproducts.renderProducts)();
+    initCart();
+    (0, _cart.pageload)();
+    (0, _cart.lsonload)();
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
+},{"./renderproducts":"cZjRU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./cart":"htCJt"}]},["ewxtM"], null, "parcelRequire94c2")
 
-},{}]},["diqOB","htCJt"], "htCJt", "parcelRequire94c2")
-
-//# sourceMappingURL=cartpage.7e6e2823.js.map
+//# sourceMappingURL=index.3dc2c5cd.js.map
