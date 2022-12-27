@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"k3CZ1":[function(require,module,exports) {
+})({"f2F2y":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "f5b03f7dbecd31c8";
+module.bundle.HMR_BUNDLE_ID = "8a780b17c6650408";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -537,14 +537,13 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "cart", ()=>cart);
 var _renderproducts = require("./renderproducts");
-let cart = [];
-/*function initCart() {
-	for (let product of products) {
-		cart[product.name] = 0;
-	}
-}*/ window.onload = ()=>{
+const cart = [];
+function initCart() {
+    for (let product of (0, _renderproducts.products))cart[product.name] = 0;
+}
+window.onload = ()=>{
     (0, _renderproducts.renderProducts)();
-//initCart();
+    initCart();
 //pageload();
 //lsonload();
 };
@@ -559,35 +558,35 @@ var _main = require("./main");
 const products = [
     {
         name: "Butterkaka",
-        image: "butterkaka.jpeg",
+        image: "/images/cake.jpg",
         description: "Mycket fin butterkaka.",
         price: 59,
         id: 1
     },
     {
         name: "Gel\xe9 n\xe5gonting",
-        image: "cake.jpg",
+        image: "/images/cake.jpg",
         description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
         price: 299,
         id: 2
     },
     {
         name: "An EXTREMELY spicy sauce",
-        image: "cake.jpg",
+        image: "/images/cake.jpg",
         description: "F\xe5r dina smakl\xf6kar att dansa tango!",
         price: 79,
         id: 3
     },
     {
         name: "I don't even know what this is",
-        image: "cake.jpg",
+        image: "/images/cake.jpg",
         description: "Smakar verkligen inte gott.",
         price: 59,
         id: 4
     },
     {
         name: "A unique sandwich",
-        image: "cake.jpg",
+        image: "/images/cake.jpg",
         description: "An idiot-sandwich.",
         price: 59,
         id: 5
@@ -619,34 +618,48 @@ function renderProducts() {
         createh2.innerText = product.name;
         createSection.innerText = product.description;
         createParagraph.innerText = product.price.toString() + " SEK";
-        addImg.src = product.image;
+        addImg.innerHTML = product.image;
         addImg.className = "product__images";
         addtocartBtn.innerText = "Add to cart";
-        addtocartBtn?.addEventListener("click", ()=>{
+        /*addtocartBtn.addEventListener("click", () =>{
+    cart.push();
+    /*for(let i=0; products.length > i; i++){
+        cart[products[i].price];
+    }
+    let productPrice = cart.values();
+    let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
+    let span_total = document.createElement('span') as HTMLSpanElement; 
+    
+    if (document.getElementById("navTotalSum")) {
+    return;
+    
+    } else {
+        hamburgerSection?.appendChild(span_total);
+            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+            span_total.innerText= "Total:" + productPrice;
+            span_total.setAttribute('id', 'navTotalSum');
+            
+    }
+})*/ addtocartBtn?.addEventListener("click", ()=>{
             let found = products.find((product)=>{
                 return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
             });
             if (!found) return;
             (0, _main.cart).push(found);
             localStorage.setItem("cartItem", JSON.stringify((0, _main.cart)));
-            let hamburgerSection = document.getElementById("hamburger");
-            let span_total = document.createElement("span");
-            let showTotal = document.getElementById("navTotalSum");
-            let totalSum = (0, _main.cart).reduce(function(acc, obj) {
-                return acc + obj.price;
-            }, 0);
-            if (document.getElementById("navTotalSum")) {
-                hamburgerSection.removeChild(showTotal);
-                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-                span_total.innerText = "Total:" + totalSum + " SEK";
-                span_total.setAttribute("id", "navTotalSum");
-            } else {
-                hamburgerSection?.appendChild(span_total);
-                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-                span_total.innerText = "Total:" + totalSum + " SEK";
-                span_total.setAttribute("id", "navTotalSum");
-            }
-        });
+        /*let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
+        let span_total = document.createElement('span') as HTMLSpanElement; 
+    
+        if (document.getElementById("navTotalSum")) {
+        return;
+    
+        } else {
+        hamburgerSection?.appendChild(span_total);
+            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+            span_total.innerText= "Total:" + totalSum.toString() + " SEK";
+            span_total.setAttribute('id', 'navTotalSum');
+            
+        }*/ });
     }
 }
 
@@ -680,6 +693,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["k3CZ1","2rtbR"], "2rtbR", "parcelRequire94c2")
+},{}]},["f2F2y"], null, "parcelRequire94c2")
 
-//# sourceMappingURL=index.becd31c8.js.map
+//# sourceMappingURL=index.c6650408.js.map

@@ -1,9 +1,11 @@
+//import { totalSum } from "./cart";
+import { cartItems } from "./cart";
 import { cart } from "./main";
 
 export const products = [
 	{
 		name: "Butterkaka",
-		image: "/images/cake.jpg",
+		image: "butterkaka.jpeg",
 
 		description: "Mycket fin butterkaka.",
 
@@ -12,7 +14,7 @@ export const products = [
 	},
 	{
 		name: "Gelé någonting",
-		image: "/images/cake.jpg",
+		image: "cake.jpg",
 
 		description: "Spännande konsistens för alla kulinariska mesar.",
 
@@ -21,7 +23,7 @@ export const products = [
 	},
 	{
 		name: "An EXTREMELY spicy sauce",
-		image: "/images/cake.jpg",
+		image: "cake.jpg",
 
 		description: "Får dina smaklökar att dansa tango!",
 
@@ -30,7 +32,7 @@ export const products = [
 	},
 	{
 		name: "I don't even know what this is",
-		image: "/images/cake.jpg",
+		image: "cake.jpg",
 
 		description: "Smakar verkligen inte gott.",
 
@@ -39,7 +41,7 @@ export const products = [
 	},
 	{
 		name: "A unique sandwich",
-		image: "/images/cake.jpg",
+		image: "cake.jpg",
 		description: "An idiot-sandwich.",
 		price: 59,
 		id: 5,
@@ -120,39 +122,42 @@ export function renderProducts() {
 		pDesc.innerText = product.description;
 		pPriceValue.innerText = `${product.price.toString()} SEK`;
 
-		// addImg.innerHTML = product.image;
-		// addImg.className = "product__images";
-		// addtocartBtn.innerText = "Add to cart";
-
-		/*addtocartBtn.addEventListener("click", () =>{
-    cart.push();
-    /*for(let i=0; products.length > i; i++){
-        cart[products[i].price];
-    }
-    let productPrice = cart.values();
-    let hamburgerSection = document.getElementById("hamburger") as HTMLDivElement;
-    let span_total = document.createElement('span') as HTMLSpanElement; 
-    
-    if (document.getElementById("navTotalSum")) {
-    console.log("");
-    
-    } else {
-        hamburgerSection?.appendChild(span_total);
-            hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-            span_total.innerText= "Total:" + productPrice;
-            span_total.setAttribute('id', 'navTotalSum');
-            
-    }
-})*/
-
-		button?.addEventListener("click", () => {
+		addtocartBtn?.addEventListener("click", () => {
 			let found = products.find((product) => {
-				return button.id.includes(`addtocartBtn${product.id}`);
+				return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
 			});
 			if (!found) {
 				return;
 			}
+			cart.push(found);
 			localStorage.setItem("cartItem", JSON.stringify(cart));
+
+			let hamburgerSection = document.getElementById(
+				"hamburger"
+			) as HTMLDivElement;
+			let span_total = document.createElement("span") as HTMLSpanElement;
+			let showTotal = document.getElementById("navTotalSum") as HTMLSpanElement;
+			let totalSum = cart.reduce(function (acc, obj) {
+				return acc + obj.price;
+			}, 0);
+
+			if (document.getElementById("navTotalSum")) {
+				hamburgerSection.removeChild(showTotal);
+				hamburgerSection?.insertBefore(
+					span_total,
+					hamburgerSection.children[0]
+				);
+				span_total.innerText = "Total:" + totalSum + " SEK";
+				span_total.setAttribute("id", "navTotalSum");
+			} else {
+				hamburgerSection?.appendChild(span_total);
+				hamburgerSection?.insertBefore(
+					span_total,
+					hamburgerSection.children[0]
+				);
+				span_total.innerText = "Total:" + totalSum + " SEK";
+				span_total.setAttribute("id", "navTotalSum");
+			}
 		});
 	}
 }

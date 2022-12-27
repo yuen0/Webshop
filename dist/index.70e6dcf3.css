@@ -258,4 +258,10 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   padding-top: 5%;
 }
 
+.cart {
+  width: 100%;
+  height: 70vh;
+  background-color: beige;
+}
+
 /*# sourceMappingURL=index.70e6dcf3.css.map */
