@@ -1,14 +1,13 @@
 import { renderProducts, products } from "./renderproducts";
 
-export interface Product{
-    name:string;
-    image: string;
-    description: string;
-    price: number;
-    id: number;
-
+export interface Product {
+	name: string;
+	image: string;
+	description: string;
+	price: number;
+	id: number;
 }
-export const cart: Product[]= [];
+export const cart: Product[] = [];
 
 function initCart() {
 	for (let product of products) {

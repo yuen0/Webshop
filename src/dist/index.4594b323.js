@@ -539,13 +539,15 @@ let description = document.getElementById("pDescription");
 let title = document.getElementById("pTitle");
 let price = document.getElementById("pPrice");
 let img = document.getElementById("pImg");
+let h2 = document.querySelectorAll(".products__card > h2");
 productOnClick();
 //renderInfo();
 function productOnClick() {
     productCard?.addEventListener("click", ()=>{
         window.location.href = "./pdetails.html";
     });
-} /*function renderInfo() {
+}
+/*function renderInfo() {
 	for (let product of products) {
 		if (product.id === "product_1") {
 			description.innerHTML = product.description;
@@ -554,7 +556,23 @@ function productOnClick() {
 			img.style.backgroundImage = `url(${product.image})`;
 		}
 	}
-}*/ 
+}*/ // for (let i = 0; i > h2.length; i++) {
+// 	h2[i],
+// 		addEventListener("click", (e) => {
+// 			console.log("hej");
+// 		});
+// }
+// for (let element of h2) {
+// 	element.addEventListener("click", (e) => {
+// 		let target = e.target as Element;
+// 		for (let product of products) {
+// 			if (target.id == "productName" + product.id) {
+// 				console.log(product.id);
+// 			}
+// 		}
+// 	});
+// }
+console.log(Array.from(h2));
 
 },{"./renderproducts":"cZjRU"}]},["8t0mY","dkN9q"], "dkN9q", "parcelRequire94c2")
 
