@@ -1,6 +1,6 @@
 import { products, renderProducts } from "./renderproducts";
 
-products
+products;
 let productCard = document.querySelector(
 	"#productCardContainer"
 ) as HTMLDivElement;
@@ -10,6 +10,7 @@ let description = document.getElementById(
 let title = document.getElementById("pTitle") as HTMLHeadingElement;
 let price = document.getElementById("pPrice") as HTMLDivElement;
 let img = document.getElementById("pImg") as HTMLDivElement;
+let h2 = document.querySelectorAll(".products__card > h2");
 productOnClick();
 //renderInfo();
 
@@ -29,3 +30,22 @@ function productOnClick() {
 		}
 	}
 }*/
+// for (let i = 0; i > h2.length; i++) {
+// 	h2[i],
+// 		addEventListener("click", (e) => {
+// 			console.log("hej");
+// 		});
+// }
+
+// for (let element of h2) {
+// 	element.addEventListener("click", (e) => {
+// 		let target = e.target as Element;
+// 		for (let product of products) {
+// 			if (target.id == "productName" + product.id) {
+// 				console.log(product.id);
+// 			}
+// 		}
+// 	});
+// }
+
+console.log(Array.from(h2));
