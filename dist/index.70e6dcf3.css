@@ -110,21 +110,21 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   overflow: hidden;
 }
 
-* body .products__card .products__img img {
+* body .products__img img {
   width: 100%;
   max-height: 290px;
   display: inherit;
   object-fit: cover;
 }
 
-* body .products__card .products__content {
+* body .products__content {
   flex-direction: column;
   justify-content: space-between;
   padding: 24px;
   display: block;
 }
 
-* body .products__card .products__content .products__title {
+* body .products__title {
   color: #2f4f4f;
   text-align: center;
   padding-bottom: 1rem;
@@ -132,18 +132,18 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   line-height: 1em;
 }
 
-* body .products__card .products__content .products__description {
+* body .products__description {
   padding-bottom: 1rem;
 }
 
-* body .products__card .products__content .products__price p {
+* body .products__price p {
   color: #2f4f4f;
   padding-bottom: 1rem;
   font-size: 1.8em;
   font-weight: bold;
 }
 
-* body .products__card .products__content .products__button {
+* body .products__button {
   color: #fff;
   width: 100%;
   background-color: #68aaaa;

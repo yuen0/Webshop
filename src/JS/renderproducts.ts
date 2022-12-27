@@ -118,7 +118,8 @@ export function renderProducts() {
 		// container.appendChild(createParagraph);
 		// container.appendChild(addtocartBtn);
 
-		pTitle.innerText = product.name;
+		pImg.src = product.image;
+        pTitle.innerText = product.name;
 		pDesc.innerText = product.description;
 		pPriceValue.innerText = `${product.price.toString()} SEK`;
 

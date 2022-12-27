@@ -596,35 +596,67 @@ const products = [
 function renderProducts() {
     for (let product of products){
         let container = document.getElementById("productsContainer");
-        let createArticle = document.createElement("article");
-        let createSection = document.createElement("section");
-        let addtocartBtn = document.createElement("button");
-        let addImg = document.createElement("img");
-        let createh2 = document.createElement("h2");
-        let createParagraph = document.createElement("p");
-        createh2.setAttribute("id", "productname" + product.id);
-        addImg.setAttribute("id", "productimage" + product.id);
-        createArticle.setAttribute("id", "articleContainer" + product.id);
-        addtocartBtn.setAttribute("id", "addtocartBtn" + product.id);
-        createSection.setAttribute("id", "productDescription" + product.id);
-        createParagraph.setAttribute("id", "productPrice" + product.id);
-        addtocartBtn.className = "products__button";
-        container.className = "products__card";
-        container.appendChild(addImg);
-        container.appendChild(createArticle);
-        container.appendChild(createh2);
-        container.appendChild(createSection);
-        container.appendChild(createParagraph);
-        container.appendChild(addtocartBtn);
-        createh2.innerText = product.name;
-        createSection.innerText = product.description;
-        createParagraph.innerText = product.price.toString() + " SEK";
-        addImg.src = product.image;
-        addImg.className = "product__images";
-        addtocartBtn.innerText = "Add to cart";
-        addtocartBtn?.addEventListener("click", ()=>{
+        const pHeader = document.getElementById("productsHeader");
+        // let createArticle = document.createElement("article") as HTMLDivElement;
+        // let createSection = document.createElement("section") as HTMLDivElement;
+        // let addtocartBtn = document.createElement("button") as HTMLButtonElement;
+        // let addImg = document.createElement("img") as HTMLImageElement;
+        // let createh2 = document.createElement("h2") as HTMLHeadingElement;
+        // let createParagraph = document.createElement("p") as HTMLParagraphElement;
+        let pCard = document.createElement("article");
+        let pImgContainer = document.createElement("article");
+        let pImg = document.createElement("img");
+        let pContent = document.createElement("article");
+        let pTitle = document.createElement("h2");
+        let pDesc = document.createElement("p");
+        let pPrice = document.createElement("article");
+        let pPriceValue = document.createElement("p");
+        let button = document.createElement("button");
+        pCard.classList.add("products__card");
+        pImgContainer.classList.add("products__img");
+        //pImg.setAttribute("id", "")
+        pContent.classList.add("products__content");
+        pTitle.setAttribute("id", "productname" + product.id);
+        pTitle.classList.add("products__title");
+        pDesc.classList.add("products__description");
+        pDesc.setAttribute("id", "productDescription" + product.id);
+        pPrice.classList.add("products__price");
+        pPriceValue.setAttribute("id", "productPrice" + product.id);
+        button.classList.add("products__button");
+        button.setAttribute("id", "addtocartBtn" + product.id);
+        button.innerText = "Add to Cart";
+        container.appendChild(pCard);
+        pHeader.after(pCard);
+        pCard.appendChild(pImgContainer);
+        pCard.appendChild(pContent);
+        pImgContainer.after(pContent);
+        pImgContainer.appendChild(pImg);
+        pContent.appendChild(pTitle);
+        pContent.appendChild(pDesc);
+        pContent.appendChild(pPrice);
+        pContent.appendChild(button);
+        pPrice.appendChild(pPriceValue);
+        // createh2.setAttribute("id", "productname" + product.id);
+        // addImg.setAttribute("id", "productimage" + product.id);
+        // createArticle.setAttribute("id", "articleContainer" + product.id);
+        // addtocartBtn.setAttribute("id", "addtocartBtn" + product.id);
+        // createSection.setAttribute("id", "productDescription" + product.id);
+        // createParagraph.setAttribute("id", "productPrice" + product.id);
+        // addtocartBtn.className = "products__button";
+        // container.className = "products__card";
+        // container.appendChild(addImg);
+        // container.appendChild(createArticle);
+        // container.appendChild(createh2);
+        // container.appendChild(createSection);
+        // container.appendChild(createParagraph);
+        // container.appendChild(addtocartBtn);
+        pImg.src = product.image;
+        pTitle.innerText = product.name;
+        pDesc.innerText = product.description;
+        pPriceValue.innerText = `${product.price.toString()} SEK`;
+        button?.addEventListener("click", ()=>{
             let found = products.find((product)=>{
-                return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
+                return button.id.includes(`addtocartBtn${product.id}`);
             });
             if (!found) return;
             (0, _main.cart).push(found);
@@ -650,7 +682,7 @@ function renderProducts() {
     }
 }
 
-},{"./main":"2rtbR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./main":"2rtbR"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
