@@ -122,9 +122,9 @@ export function renderProducts() {
 		pDesc.innerText = product.description;
 		pPriceValue.innerText = `${product.price.toString()} SEK`;
 
-		addtocartBtn?.addEventListener("click", () => {
+		button?.addEventListener("click", () => {
 			let found = products.find((product) => {
-				return addtocartBtn.id.includes(`addtocartBtn${product.id}`);
+				return button.id.includes(`addtocartBtn${product.id}`);
 			});
 			if (!found) {
 				return;
