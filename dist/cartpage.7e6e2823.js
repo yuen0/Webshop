@@ -558,14 +558,14 @@ function renderCart() {
         createh2.innerText = cartItem.name;
         createSection.innerText = cartItem.description;
         createParagraph.innerText = cartItem.price.toString() + " SEK";
-        addImg.innerHTML = cartItem.image;
+        addImg.src = cartItem.image;
         removeBtn.innerText = "Remove";
         removeBtn.addEventListener("click", ()=>{
             /*let removeItem = cartItem.children(cartItem.id);
         if (removeItem) {
             cartItem.removeChild(removeItem);
-        }*/ cartItems.splice(1);
-        //localStorage.setItem("cartItem", JSON.stringify(cartItems));
+        }*/ cartItems.splice(1, 1);
+            localStorage.setItem("cartItem", JSON.stringify(cartItems));
         });
     }
     let container1 = document.getElementById("cart");

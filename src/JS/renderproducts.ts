@@ -7,7 +7,7 @@ export const products =
 [
     {
         name: "Butterkaka",
-        image: "/images/cake.jpg",
+        image: "butterkaka.jpeg",
         
         description: "Mycket fin butterkaka.",
         
@@ -17,7 +17,7 @@ export const products =
     },
     {
         name: "Gelé någonting",
-        image: "/images/cake.jpg",
+        image: "cake.jpg",
         
         description: "Spännande konsistens för alla kulinariska mesar.",
         
@@ -27,7 +27,7 @@ export const products =
     },
     {
         name: "An EXTREMELY spicy sauce",
-        image: "/images/cake.jpg",
+        image: "cake.jpg",
         
         description: "Får dina smaklökar att dansa tango!",
         
@@ -37,7 +37,7 @@ export const products =
     },
     {
         name: "I don't even know what this is",
-        image: "/images/cake.jpg",
+        image: "cake.jpg",
         
         description: "Smakar verkligen inte gott.",
         
@@ -47,7 +47,7 @@ export const products =
     },
     {
         name: "A unique sandwich",
-        image: "/images/cake.jpg",
+        image: "cake.jpg",
         description: "An idiot-sandwich.",
         price: 59,
         id: 5
@@ -88,7 +88,7 @@ createh2.innerText = product.name;
 createSection.innerText = product.description;
 createParagraph.innerText = product.price.toString() + " SEK";
 
-addImg.innerHTML = product.image;
+addImg.src = product.image;
 addImg.className="product__images";
 addtocartBtn.innerText = "Add to cart";
 

@@ -559,35 +559,35 @@ var _main = require("./main");
 const products = [
     {
         name: "Butterkaka",
-        image: "/images/cake.jpg",
+        image: "butterkaka.jpeg",
         description: "Mycket fin butterkaka.",
         price: 59,
         id: 1
     },
     {
         name: "Gel\xe9 n\xe5gonting",
-        image: "/images/cake.jpg",
+        image: "cake.jpg",
         description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
         price: 299,
         id: 2
     },
     {
         name: "An EXTREMELY spicy sauce",
-        image: "/images/cake.jpg",
+        image: "cake.jpg",
         description: "F\xe5r dina smakl\xf6kar att dansa tango!",
         price: 79,
         id: 3
     },
     {
         name: "I don't even know what this is",
-        image: "/images/cake.jpg",
+        image: "cake.jpg",
         description: "Smakar verkligen inte gott.",
         price: 59,
         id: 4
     },
     {
         name: "A unique sandwich",
-        image: "/images/cake.jpg",
+        image: "cake.jpg",
         description: "An idiot-sandwich.",
         price: 59,
         id: 5
@@ -619,7 +619,7 @@ function renderProducts() {
         createh2.innerText = product.name;
         createSection.innerText = product.description;
         createParagraph.innerText = product.price.toString() + " SEK";
-        addImg.innerHTML = product.image;
+        addImg.src = product.image;
         addImg.className = "product__images";
         addtocartBtn.innerText = "Add to cart";
         addtocartBtn?.addEventListener("click", ()=>{
