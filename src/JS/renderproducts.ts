@@ -56,12 +56,6 @@ export function renderProducts() {
 		const pHeader = document.getElementById(
 			"productsHeader"
 		) as HTMLHeadingElement;
-		// let createArticle = document.createElement("article") as HTMLDivElement;
-		// let createSection = document.createElement("section") as HTMLDivElement;
-		// let addtocartBtn = document.createElement("button") as HTMLButtonElement;
-		// let addImg = document.createElement("img") as HTMLImageElement;
-		// let createh2 = document.createElement("h2") as HTMLHeadingElement;
-		// let createParagraph = document.createElement("p") as HTMLParagraphElement;
 
 		let pCard = document.createElement("article") as HTMLDivElement;
 		let pImgContainer = document.createElement("article") as HTMLDivElement;
@@ -102,24 +96,8 @@ export function renderProducts() {
 
 		pPrice.appendChild(pPriceValue);
 
-		// createh2.setAttribute("id", "productname" + product.id);
-		// addImg.setAttribute("id", "productimage" + product.id);
-		// createArticle.setAttribute("id", "articleContainer" + product.id);
-		// addtocartBtn.setAttribute("id", "addtocartBtn" + product.id);
-		// createSection.setAttribute("id", "productDescription" + product.id);
-		// createParagraph.setAttribute("id", "productPrice" + product.id);
-
-		// addtocartBtn.className = "products__button";
-		// container.className = "products__card";
-		// container.appendChild(addImg);
-		// container.appendChild(createArticle);
-		// container.appendChild(createh2);
-		// container.appendChild(createSection);
-		// container.appendChild(createParagraph);
-		// container.appendChild(addtocartBtn);
-
 		pImg.src = product.image;
-        pTitle.innerText = product.name;
+		pTitle.innerText = product.name;
 		pDesc.innerText = product.description;
 		pPriceValue.innerText = `${product.price.toString()} SEK`;
 

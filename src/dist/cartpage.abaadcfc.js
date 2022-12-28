@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"gbk0u":[function(require,module,exports) {
+})({"aMCDm":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "9cf78da7eacc809c";
+module.bundle.HMR_BUNDLE_ID = "c31ca0a2abaadcfc";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -531,138 +531,103 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"2rtbR":[function(require,module,exports) {
-//import { lsonload, pageload } from "./cart";
+},{}],"htCJt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "cart", ()=>cart);
-var _renderproducts = require("./renderproducts");
-let cart = [];
-/*function initCart() {
-	for (let product of products) {
-		cart[product.name] = 0;
-	}
-}*/ window.onload = ()=>{
-    (0, _renderproducts.renderProducts)();
-//initCart();
-//pageload();
-//lsonload();
-};
-
-},{"./renderproducts":"cZjRU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cZjRU":[function(require,module,exports) {
-//import { totalSum } from "./cart";
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "products", ()=>products);
-parcelHelpers.export(exports, "renderProducts", ()=>renderProducts);
-var _main = require("./main");
-const products = [
-    {
-        name: "Butterkaka",
-        image: "butterkaka.jpeg",
-        description: "Mycket fin butterkaka.",
-        price: 59,
-        id: 1
-    },
-    {
-        name: "Gel\xe9 n\xe5gonting",
-        image: "cake.jpg",
-        description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
-        price: 299,
-        id: 2
-    },
-    {
-        name: "An EXTREMELY spicy sauce",
-        image: "cake.jpg",
-        description: "F\xe5r dina smakl\xf6kar att dansa tango!",
-        price: 79,
-        id: 3
-    },
-    {
-        name: "I don't even know what this is",
-        image: "cake.jpg",
-        description: "Smakar verkligen inte gott.",
-        price: 59,
-        id: 4
-    },
-    {
-        name: "A unique sandwich",
-        image: "cake.jpg",
-        description: "An idiot-sandwich.",
-        price: 59,
-        id: 5
-    }
-];
-function renderProducts() {
-    for (let product of products){
-        let container = document.getElementById("productsContainer");
-        const pHeader = document.getElementById("productsHeader");
-        let pCard = document.createElement("article");
-        let pImgContainer = document.createElement("article");
-        let pImg = document.createElement("img");
-        let pContent = document.createElement("article");
-        let pTitle = document.createElement("h2");
-        let pDesc = document.createElement("p");
-        let pPrice = document.createElement("article");
-        let pPriceValue = document.createElement("p");
-        let button = document.createElement("button");
-        pCard.classList.add("products__card");
-        pImgContainer.classList.add("products__img");
-        //pImg.setAttribute("id", "")
-        pContent.classList.add("products__content");
-        pTitle.setAttribute("id", "productname" + product.id);
-        pTitle.classList.add("products__title");
-        pDesc.classList.add("products__description");
-        pDesc.setAttribute("id", "productDescription" + product.id);
-        pPrice.classList.add("products__price");
-        pPriceValue.setAttribute("id", "productPrice" + product.id);
-        button.classList.add("products__button");
-        button.setAttribute("id", "addtocartBtn" + product.id);
-        button.innerText = "Add to Cart";
-        container.appendChild(pCard);
-        pHeader.after(pCard);
-        pCard.appendChild(pImgContainer);
-        pCard.appendChild(pContent);
-        pImgContainer.after(pContent);
-        pImgContainer.appendChild(pImg);
-        pContent.appendChild(pTitle);
-        pContent.appendChild(pDesc);
-        pContent.appendChild(pPrice);
-        pContent.appendChild(button);
-        pPrice.appendChild(pPriceValue);
-        pImg.src = product.image;
-        pTitle.innerText = product.name;
-        pDesc.innerText = product.description;
-        pPriceValue.innerText = `${product.price.toString()} SEK`;
-        button?.addEventListener("click", ()=>{
-            let found = products.find((product)=>{
-                return button.id.includes(`addtocartBtn${product.id}`);
-            });
-            if (!found) return;
-            (0, _main.cart).push(found);
-            localStorage.setItem("cartItem", JSON.stringify((0, _main.cart)));
-            let hamburgerSection = document.getElementById("hamburger");
-            let span_total = document.createElement("span");
-            let showTotal = document.getElementById("navTotalSum");
-            let totalSum = (0, _main.cart).reduce(function(acc, obj) {
-                return acc + obj.price;
-            }, 0);
-            if (document.getElementById("navTotalSum")) {
-                hamburgerSection.removeChild(showTotal);
-                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-                span_total.innerText = "Total:" + totalSum + " SEK";
-                span_total.setAttribute("id", "navTotalSum");
-            } else {
-                hamburgerSection?.appendChild(span_total);
-                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
-                span_total.innerText = "Total:" + totalSum + " SEK";
-                span_total.setAttribute("id", "navTotalSum");
-            }
+parcelHelpers.export(exports, "cartItems", ()=>cartItems);
+const cartItems = JSON.parse(localStorage.cartItem);
+// function pageload(){if (!cartItems) {return;}}
+let totalSum = cartItems.reduce(function(acc, obj) {
+    return acc + obj.price;
+}, 0);
+function renderCart() {
+    for (let cartItem of cartItems){
+        let container = document.getElementById("cart");
+        let createArticle = document.createElement("article");
+        let createSection = document.createElement("section");
+        let removeBtn = document.createElement("button");
+        let addImg = document.createElement("img");
+        let createh2 = document.createElement("h2");
+        let createParagraph = document.createElement("p");
+        container.appendChild(addImg);
+        container.appendChild(createArticle);
+        container.appendChild(createh2);
+        container.appendChild(createSection);
+        container.appendChild(createParagraph);
+        container.appendChild(removeBtn);
+        createh2.innerText = cartItem.name;
+        createSection.innerText = cartItem.description;
+        createParagraph.innerText = cartItem.price.toString() + " SEK";
+        addImg.src = cartItem.image;
+        removeBtn.innerText = "Remove";
+        removeBtn.addEventListener("click", ()=>{
+            /*let removeItem = cartItem.children(cartItem.id);
+        if (removeItem) {
+            cartItem.removeChild(removeItem);
+        }*/ cartItems.splice(1, 1);
+            localStorage.setItem("cartItem", JSON.stringify(cartItems));
         });
     }
+    let container1 = document.getElementById("cart");
+    let purchaseBtn = document.createElement("button");
+    let createh1 = document.createElement("h2");
+    let createForm = document.createElement("form");
+    let createInputname = document.createElement("input");
+    let createInputadress = document.createElement("input");
+    let createInputpostnr = document.createElement("input");
+    let createInputcreditcard = document.createElement("input");
+    let fullnameLabel = document.createElement("label");
+    let adressLabel = document.createElement("label");
+    let postnrLabel = document.createElement("label");
+    let bankLabel = document.createElement("label");
+    let creditcardLabel = document.createElement("label");
+    let selectmenu = document.createElement("select");
+    let optionNordea = document.createElement("option");
+    let optionSwedbank = document.createElement("option");
+    let optionHandelsbanken = document.createElement("option");
+    let createH3 = document.createElement("h3");
+    container1.appendChild(createH3);
+    container1.appendChild(createh1);
+    container1.appendChild(createForm);
+    createForm.appendChild(fullnameLabel);
+    createForm.appendChild(createInputname);
+    createForm.appendChild(adressLabel);
+    createForm.appendChild(createInputadress);
+    createForm.appendChild(postnrLabel);
+    createForm.appendChild(createInputpostnr);
+    createForm.appendChild(bankLabel);
+    createForm.appendChild(selectmenu);
+    selectmenu.appendChild(optionNordea);
+    selectmenu.appendChild(optionSwedbank);
+    selectmenu.appendChild(optionHandelsbanken);
+    createForm.appendChild(creditcardLabel);
+    createForm.appendChild(createInputcreditcard);
+    container1.appendChild(purchaseBtn);
+    fullnameLabel.setAttribute("name", "name");
+    adressLabel.setAttribute("name", "adress");
+    postnrLabel.setAttribute("name", "zipcode");
+    creditcardLabel.setAttribute("name", "creditcard");
+    createH3.innerText = "Total: " + totalSum + " SEK";
+    creditcardLabel.innerText = "Please provide your credit card number:";
+    bankLabel.innerText = "Please select your bank from the dropdown menu:";
+    optionNordea.innerText = "Nordea";
+    optionSwedbank.innerText = "Swedbank";
+    optionHandelsbanken.innerText = "Handelsbanken";
+    createh1.innerText = "Where do you want us to send your order?";
+    fullnameLabel.innerText = "Please enter your full name:";
+    adressLabel.innerText = "Please enter your adress:";
+    postnrLabel.innerText = "Please enter your ZIP code:";
+    purchaseBtn.innerText = "Purchase";
+    purchaseBtn.addEventListener("click", ()=>{
+        localStorage.clear();
+    //Till confirmationpage.html
+    });
 }
+window.onload = ()=>{
+    renderCart();
+};
 
-},{"./main":"2rtbR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -692,6 +657,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["gbk0u","2rtbR"], "2rtbR", "parcelRequire94c2")
+},{}]},["aMCDm","htCJt"], "htCJt", "parcelRequire94c2")
 
-//# sourceMappingURL=index.eacc809c.js.map
+//# sourceMappingURL=cartpage.abaadcfc.js.map
