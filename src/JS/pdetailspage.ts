@@ -9,7 +9,7 @@ let img = document.getElementById("pImg") as HTMLDivElement;
 
 renderInfo();
 
-function renderInfo() {
+export function renderInfo() {
 	if (!localStorage) {
 		return;
 	}

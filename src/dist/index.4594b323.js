@@ -534,6 +534,7 @@ function hmrAcceptRun(bundle, id) {
 },{}],"dkN9q":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "renderInfo", ()=>renderInfo);
 let description = document.getElementById("pDescription");
 let title = document.getElementById("pTitle");
 let price = document.getElementById("pPrice");
