@@ -235,7 +235,6 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
 .footer {
   color: #fff;
   text-align: center;
-  height: 20%;
   background-color: #2f4f4f;
   justify-content: center;
   align-items: center;
@@ -254,14 +253,192 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   font-size: 2.3em;
 }
 
+.footer__container .footer__text {
+  margin-bottom: 15%;
+}
+
 .footer__container .footer__text p {
   padding-top: 5%;
 }
 
 .cart {
   width: 100%;
-  height: 100vh;
+  margin: 0 auto;
+}
+
+.cart__header {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 5%;
+  font-size: 1.8em;
+}
+
+.cart__container {
+  width: 100%;
+}
+
+.cart__container .cart__heading {
+  padding: 6% 0 6% 4%;
+}
+
+.cart__container .cart__productCard {
+  width: inherit;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 7%;
+}
+
+.cart__container .cart__productCard .cart__product {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4% 2%;
+  display: flex;
+}
+
+.cart__container .cart__productCard .cart__img {
+  width: 80px;
+  height: 80px;
+}
+
+.cart__container .cart__productCard .cart__productDetails {
+  width: 100%;
+  padding-left: 2%;
+}
+
+.cart__container .cart__productCard .cart__productDetails .cart__productName {
+  word-wrap: break-word;
+  word-break: break-all;
+  padding-bottom: 3%;
+}
+
+.cart__container .cart__productCard .cart__productDetails .cart__detailContainer {
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+}
+
+.cart__container .cart__productCard .cart__productDetails .cart__detailContainer .cart__qty {
+  width: 100%;
+  flex-direction: row;
+  justify-content: start;
+  display: flex;
+}
+
+.cart__container .cart__productCard .cart__productDetails .cart__detailContainer .cart__qty .cart__price {
+  padding-left: 2%;
+}
+
+.cart__container .cart__productCard .cart__remove {
+  color: #a8a8a8;
   background-color: #fff;
+  border: none;
+  font-size: 1.3em;
+}
+
+.cart__container .cart__totalPrice {
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf;
+  flex-direction: column;
+  padding: 6% 6% 3%;
+  display: flex;
+}
+
+.cart__container .cart__totalPrice .cart__total > span {
+  font-size: 1.4em;
+  font-weight: 900;
+}
+
+.cart__container .cart__totalPrice > article {
+  justify-content: space-between;
+  padding-bottom: 3%;
+  display: flex;
+}
+
+.cart__container .cart__totalPrice > article > span {
+  font-size: 1.2em;
+}
+
+.cart__container .cart__checkout {
+  width: 100%;
+  flex-direction: column;
+  padding: 0 5%;
+  display: flex;
+}
+
+.cart__container .cart__checkout .cart__card {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #4bd4d4;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8%;
+  padding: 3% 6%;
+  display: flex;
+}
+
+.cart__container .cart__checkout .cart__card .cart__creditCard {
+  font-size: 1.1em;
+}
+
+.cart__container .cart__checkout .cart__card .cart__creditCard span {
+  font-weight: normal;
+}
+
+.cart__container .cart__checkout .cart__card .cart__checkmark {
+  color: #3abdb2;
+  font-size: 1.3em;
+  display: flex;
+}
+
+.cart__container .cart__checkout form {
+  flex-direction: column;
+  display: flex;
+}
+
+.cart__container .cart__checkout form article {
+  flex-direction: column;
+  padding-bottom: 4%;
+  display: flex;
+}
+
+.cart__container .cart__checkout form .cart__cDateInput {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cart__container .cart__checkout form .cart__cDateInput input {
+  width: 100%;
+}
+
+.cart__container .cart__checkout form .cart__cDateInput span {
+  padding: 0 2%;
+  font-size: 1.5em;
+}
+
+.cart__container .cart__checkout form label {
+  color: #a1a1a1;
+  padding-bottom: 2%;
+}
+
+.cart__container .cart__checkout form input {
+  background-color: #e2e9e3;
+  border: none;
+  border-radius: 5px;
+  padding: 3% 6%;
+}
+
+.cart__container .cart__checkout .cart__button {
+  color: #fff;
+  background-color: #34aa9e;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 8%;
+  padding: 3% 6%;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=index.bf117000.css.map */
