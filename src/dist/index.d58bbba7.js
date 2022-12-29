@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"8t0mY":[function(require,module,exports) {
+})({"bbN85":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "df7adfd84594b323";
+module.bundle.HMR_BUNDLE_ID = "4f3d38a4d58bbba7";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -531,55 +531,26 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"dkN9q":[function(require,module,exports) {
+},{}],"2rtbR":[function(require,module,exports) {
+//import { lsonload, pageload } from "./cart";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-let description = document.getElementById("pDescription");
-let title = document.getElementById("pTitle");
-let price = document.getElementById("pPrice");
-let img = document.getElementById("pImg");
-renderInfo();
-function renderInfo() {
-    if (!localStorage) return;
-    let renderDetails = JSON.parse(localStorage.getItem("pDetails") || "");
-    console.log(renderDetails);
-    title.innerText = renderDetails[0].name;
-    price.innerText = `${renderDetails[0].price}:-`;
-    description.innerText = renderDetails[0].description;
-    img.style.backgroundImage = `url(${renderDetails[0].image})`;
-    if (window.location.href !== "./pdetails.html") localStorage.removeItem("pDetails");
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
+parcelHelpers.export(exports, "cart", ()=>cart);
+parcelHelpers.export(exports, "pdetails", ()=>pdetails);
+var _renderproducts = require("./renderproducts");
+let cart = [];
+let pdetails = [];
+/*function initCart() {
+	for (let product of products) {
+		cart[product.name] = 0;
+	}
+}*/ window.onload = ()=>{
+    (0, _renderproducts.renderProducts)();
+//initCart();
+//pageload();
+//lsonload();
 };
 
-},{}]},["8t0mY","dkN9q"], "dkN9q", "parcelRequire94c2")
+},{"./renderproducts":"cZjRU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["bbN85"], null, "parcelRequire94c2")
 
-//# sourceMappingURL=index.4594b323.js.map
+//# sourceMappingURL=index.d58bbba7.js.map

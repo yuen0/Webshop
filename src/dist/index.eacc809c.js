@@ -544,6 +544,7 @@ let cart = [];
 	}
 }*/ window.onload = ()=>{
     (0, _renderproducts.renderProducts)();
+// renderInfo();
 //initCart();
 //pageload();
 //lsonload();
@@ -553,9 +554,11 @@ let cart = [];
 //import { totalSum } from "./cart";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "pdetails", ()=>pdetails);
 parcelHelpers.export(exports, "products", ()=>products);
 parcelHelpers.export(exports, "renderProducts", ()=>renderProducts);
 var _main = require("./main");
+let pdetails = [];
 const products = [
     {
         name: "Butterkaka",
@@ -634,8 +637,20 @@ function renderProducts() {
         pTitle.innerText = product.name;
         pDesc.innerText = product.description;
         pPriceValue.innerText = `${product.price.toString()} SEK`;
+        //Stores object in localstorage when clicking each product.
+        pCard.addEventListener("click", (e)=>{
+            let target = e.target;
+            let pInfo = products.find((product)=>{
+                return pTitle.id.includes(`productname${product.id}`);
+            });
+            if (!pInfo || target.className === "products__button") return;
+            pdetails.push(pInfo);
+            localStorage.setItem("pDetails", JSON.stringify(pdetails));
+            window.location.href = "./pdetails.html";
+        });
+        //-->
         button?.addEventListener("click", ()=>{
-            let found = products.find((product)=>{
+            let found = products?.find((product)=>{
                 return button.id.includes(`addtocartBtn${product.id}`);
             });
             if (!found) return;

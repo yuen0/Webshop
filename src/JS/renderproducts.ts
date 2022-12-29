@@ -1,6 +1,8 @@
 //import { totalSum } from "./cart";
 import { cartItems } from "./cart";
-import { cart } from "./main";
+import { cart, Product } from "./main";
+
+export let pdetails: Product[] = [];
 
 export const products = [
 	{
@@ -101,8 +103,24 @@ export function renderProducts() {
 		pDesc.innerText = product.description;
 		pPriceValue.innerText = `${product.price.toString()} SEK`;
 
+		//Stores object in localstorage when clicking each product.
+		pCard.addEventListener("click", (e) => {
+			let target = e.target as HTMLButtonElement;
+			let pInfo = products.find((product) => {
+				return pTitle.id.includes(`productname${product.id}`);
+			});
+			if (!pInfo || target.className === "products__button") {
+				return;
+			}
+			pdetails.push(pInfo);
+			localStorage.setItem("pDetails", JSON.stringify(pdetails));
+			window.location.href = "./pdetails.html";
+		});
+
+		//-->
+
 		button?.addEventListener("click", () => {
-			let found = products.find((product) => {
+			let found = products?.find((product) => {
 				return button.id.includes(`addtocartBtn${product.id}`);
 			});
 			if (!found) {
