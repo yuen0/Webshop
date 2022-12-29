@@ -1,6 +1,5 @@
 //import { lsonload, pageload } from "./cart";
 import { cartItems } from "./cart";
-import { renderInfo } from "./pdetailspage";
 import { renderProducts, products } from "./renderproducts";
 
 export interface Product {
