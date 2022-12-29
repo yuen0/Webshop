@@ -541,88 +541,73 @@ let totalSum = cartItems.reduce(function(acc, obj) {
     return acc + obj.price;
 }, 0);
 function renderCart() {
+    let container = document.getElementById("cartContainer");
     for (let cartItem of cartItems){
-        let container = document.getElementById("cart");
-        let createArticle = document.createElement("article");
-        let createSection = document.createElement("section");
+        let pContainer = document.createElement("article");
+        pContainer.classList.add("cart__product");
+        let pImgContainer = document.createElement("article");
+        pImgContainer.classList.add("cart__imgContainer");
+        let pImg = document.createElement("img");
+        pImg.classList.add("cart__img");
+        let prodDetails = document.createElement("article");
+        prodDetails.classList.add("cart__productDetails");
+        let pName = document.createElement("h4");
+        pName.classList.add("cart__productName");
+        let detailContainer = document.createElement("article");
+        detailContainer.classList.add("cart__detailContainer");
+        let qtyContainer = document.createElement("article");
+        qtyContainer.classList.add("cart__qty");
+        let label = document.createElement("label");
+        let select = document.createElement("select");
+        //options for quantity
+        for(let i = 1; i < 11; i++){
+            let option = document.createElement("option");
+            option.setAttribute("value", "");
+            option.innerText = `${i}`;
+            select.appendChild(option);
+        }
+        //
+        let priceContainer = document.createElement("article");
+        priceContainer.classList.add("cart__price");
+        let price = document.createElement("span"); //innertext price
         let removeBtn = document.createElement("button");
-        let addImg = document.createElement("img");
-        let createh2 = document.createElement("h2");
-        let createParagraph = document.createElement("p");
-        container.appendChild(addImg);
-        container.appendChild(createArticle);
-        container.appendChild(createh2);
-        container.appendChild(createSection);
-        container.appendChild(createParagraph);
-        container.appendChild(removeBtn);
-        createh2.innerText = cartItem.name;
-        createSection.innerText = cartItem.description;
-        createParagraph.innerText = cartItem.price.toString() + " SEK";
-        addImg.src = cartItem.image;
-        removeBtn.innerText = "Remove";
-        removeBtn.addEventListener("click", ()=>{
-            /*let removeItem = cartItem.children(cartItem.id);
-        if (removeItem) {
-            cartItem.removeChild(removeItem);
-        }*/ cartItems.splice(1, 1);
-            localStorage.setItem("cartItem", JSON.stringify(cartItems));
-        });
+        removeBtn.classList.add("cart__remove");
+        let xIcon = document.createElement("span");
+        label.setAttribute("for", "product-quantity");
+        select.setAttribute("name", "product-quantity");
+        select.setAttribute("id", "qty");
+        container.appendChild(pContainer);
+        pContainer.appendChild(pImgContainer);
+        pImgContainer.appendChild(pImg);
+        pContainer.appendChild(prodDetails);
+        prodDetails.appendChild(pName);
+        prodDetails.appendChild(detailContainer);
+        detailContainer.appendChild(qtyContainer);
+        qtyContainer.appendChild(label);
+        qtyContainer.appendChild(select);
+        qtyContainer.appendChild(priceContainer);
+        priceContainer.appendChild(price);
+        pContainer.appendChild(removeBtn);
+        removeBtn.appendChild(xIcon);
+        label.innerText = "qty:";
+        xIcon.innerText = "X";
+        pName.innerText = cartItem.name;
+        pImg.src = cartItem.image;
+        price.innerText = cartItem.price.toString() + " SEK";
     }
-    let container1 = document.getElementById("cart");
-    let purchaseBtn = document.createElement("button");
-    let createh1 = document.createElement("h2");
-    let createForm = document.createElement("form");
-    let createInputname = document.createElement("input");
-    let createInputadress = document.createElement("input");
-    let createInputpostnr = document.createElement("input");
-    let createInputcreditcard = document.createElement("input");
-    let fullnameLabel = document.createElement("label");
-    let adressLabel = document.createElement("label");
-    let postnrLabel = document.createElement("label");
-    let bankLabel = document.createElement("label");
-    let creditcardLabel = document.createElement("label");
-    let selectmenu = document.createElement("select");
-    let optionNordea = document.createElement("option");
-    let optionSwedbank = document.createElement("option");
-    let optionHandelsbanken = document.createElement("option");
-    let createH3 = document.createElement("h3");
-    container1.appendChild(createH3);
-    container1.appendChild(createh1);
-    container1.appendChild(createForm);
-    createForm.appendChild(fullnameLabel);
-    createForm.appendChild(createInputname);
-    createForm.appendChild(adressLabel);
-    createForm.appendChild(createInputadress);
-    createForm.appendChild(postnrLabel);
-    createForm.appendChild(createInputpostnr);
-    createForm.appendChild(bankLabel);
-    createForm.appendChild(selectmenu);
-    selectmenu.appendChild(optionNordea);
-    selectmenu.appendChild(optionSwedbank);
-    selectmenu.appendChild(optionHandelsbanken);
-    createForm.appendChild(creditcardLabel);
-    createForm.appendChild(createInputcreditcard);
-    container1.appendChild(purchaseBtn);
-    fullnameLabel.setAttribute("name", "name");
-    adressLabel.setAttribute("name", "adress");
-    postnrLabel.setAttribute("name", "zipcode");
-    creditcardLabel.setAttribute("name", "creditcard");
-    createH3.innerText = "Total: " + totalSum + " SEK";
-    creditcardLabel.innerText = "Please provide your credit card number:";
-    bankLabel.innerText = "Please select your bank from the dropdown menu:";
-    optionNordea.innerText = "Nordea";
-    optionSwedbank.innerText = "Swedbank";
-    optionHandelsbanken.innerText = "Handelsbanken";
-    createh1.innerText = "Where do you want us to send your order?";
-    fullnameLabel.innerText = "Please enter your full name:";
-    adressLabel.innerText = "Please enter your adress:";
-    postnrLabel.innerText = "Please enter your ZIP code:";
-    purchaseBtn.innerText = "Purchase";
-    purchaseBtn.addEventListener("click", ()=>{
-        localStorage.clear();
-    //Till confirmationpage.html
-    });
+// remove.addEventListener("click", () => {
+// 	/*let removeItem = cartItem.children(cartItem.id);
+//     if (removeItem) {
+//         cartItem.removeChild(removeItem);
+//     }*/
+// 	cartItems.splice(1, 1);
+// 	localStorage.setItem("cartItem", JSON.stringify(cartItems));
+// });
 }
+// purchaseBtn.addEventListener("click", ()=>{
+//     localStorage.clear();
+//     //Till confirmationpage.html
+// });
 window.onload = ()=>{
     renderCart();
 };
