@@ -543,7 +543,6 @@ renderInfo();
 function renderInfo() {
     if (!localStorage) return;
     let renderDetails = JSON.parse(localStorage.getItem("pDetails") || "");
-    console.log(renderDetails);
     title.innerText = renderDetails[0].name;
     price.innerText = `${renderDetails[0].price}:-`;
     description.innerText = renderDetails[0].description;
