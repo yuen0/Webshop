@@ -1,6 +1,7 @@
 //import { lsonload, pageload } from "./cart";
 import { cartItems } from "./cart";
 import { renderProducts, products } from "./renderproducts";
+import { renderInfo } from "./pdetailspage";
 
 export interface Product {
 	name: string;
