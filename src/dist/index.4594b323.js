@@ -539,9 +539,6 @@ let description = document.getElementById("pDescription");
 let title = document.getElementById("pTitle");
 let price = document.getElementById("pPrice");
 let img = document.getElementById("pImg");
-window.onload = ()=>{
-    renderInfo();
-};
 function renderInfo() {
     if (!localStorage) return;
     let renderDetails = JSON.parse(localStorage.getItem("pDetails") || "");
@@ -551,6 +548,9 @@ function renderInfo() {
     img.style.backgroundImage = `url(${renderDetails[0].image})`;
     if (window.location.href !== "./pdetails.html") localStorage.removeItem("pDetails");
 }
+window.onload = ()=>{
+    renderInfo();
+};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {

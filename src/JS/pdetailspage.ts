@@ -5,9 +5,6 @@ let title = document.getElementById("pTitle") as HTMLHeadingElement;
 let price = document.getElementById("pPrice") as HTMLDivElement;
 let img = document.getElementById("pImg") as HTMLDivElement;
 
-window.onload = () => {
-	renderInfo();
-};
 export function renderInfo() {
 	if (!localStorage) {
 		return;
@@ -24,3 +21,6 @@ export function renderInfo() {
 		localStorage.removeItem("pDetails");
 	}
 }
+window.onload = () => {
+	renderInfo();
+};
