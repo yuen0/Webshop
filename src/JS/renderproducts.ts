@@ -6,46 +6,51 @@ export let pdetails: Product[] = [];
 
 export const products = [
 	{
-		name: "Butterkaka",
-		image: "butterkaka.jpeg",
+		name: "2-pack sweatpants",
+		image: "product1.png",
 
-		description: "Mycket fin butterkaka.",
+		description:
+			"Byxor i sweatshirtkvalitet av bomullsblandning med mjuk, borstad insida. Byxorna har resår och dragsko i midjan. Fickor i sidsöm och ribbad mudd vid benslut.",
 
-		price: 59,
+		price: 249,
 		id: 1,
 	},
 	{
-		name: "Gelé någonting",
-		image: "cake.jpg",
+		name: "Joggers",
+		image: "product2.png",
 
-		description: "Spännande konsistens för alla kulinariska mesar.",
+		description:
+			"Ett par joggers i sweatshirtkvalitet med avsmalnande ben och låg gren. De har resår och dragsko i midjan samt sidfickor med dragkedja. Sömmar vid knäna och mudd vid benslut.",
 
-		price: 299,
+		price: 279,
 		id: 2,
 	},
 	{
-		name: "An EXTREMELY spicy sauce",
-		image: "cake.jpg",
+		name: "Huvtröja Relaxed Fit",
+		image: "product3.png",
 
-		description: "Får dina smaklökar att dansa tango!",
+		description:
+			"En tröja i bomullsblandad sweatshirtkvalitet med avslappnad passform. Tröjan har fodrad huva med dragsko. Lång ärm och känguruficka samt ribbad mudd vid ärmslut och i nederkant. Mjuk, borstad insida.",
 
-		price: 79,
+		price: 199,
 		id: 3,
 	},
 	{
-		name: "I don't even know what this is",
-		image: "cake.jpg",
+		name: "Rundhalsad T-shirt Regular Fit",
+		image: "product4.png",
 
-		description: "Smakar verkligen inte gott.",
+		description:
+			"En T-shirt i mjuk bomullstrikå med klassisk passform. T-shirten har rund halsringning med ribbad mudd. Rakt skuren nederkant.",
 
-		price: 59,
+		price: 79,
 		id: 4,
 	},
 	{
-		name: "A unique sandwich",
-		image: "cake.jpg",
-		description: "An idiot-sandwich.",
-		price: 59,
+		name: "2-pack pyjamasbyxa i bomull",
+		image: "product5.png",
+		description:
+			"Två par pyjamasbyxor i luftig, vävd bomullskvalitet. Byxorna har klädd resår och dragsko i midjan samt sidfickor. Fuskgylf.",
+		price: 299,
 		id: 5,
 	},
 ];

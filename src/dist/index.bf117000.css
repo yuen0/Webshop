@@ -290,6 +290,7 @@ html .hero p + p, body .hero p + p {
 
   * {
     scroll-behavior: smooth;
+    cursor: pointer;
   }
 }
 
@@ -405,6 +406,7 @@ html .hero p + p, body .hero p + p {
 @media screen and (min-width: 1200px) {
   * {
     scroll-behavior: smooth;
+    cursor: pointer;
   }
 }
 
