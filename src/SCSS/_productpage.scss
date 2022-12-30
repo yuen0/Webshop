@@ -13,12 +13,13 @@
 		font-size: 14px;
 
 		.products {
-			margin: 15px auto;
 			padding: 0 15px;
 			width: 90%;
+			margin: 0 auto;
 		}
 
 		.products__container {
+			padding-bottom: 2%;
 			@include m.desktop {
 				display: flex;
 				flex-wrap: wrap;

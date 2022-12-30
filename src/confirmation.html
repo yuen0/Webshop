@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Confirmation Page</title>
+		<link rel="stylesheet" href="./SCSS/main.scss" />
+		<script
+			src="https://kit.fontawesome.com/193ad45445.js"
+			crossorigin="anonymous"
+			defer
+		></script>
+	</head>
+	<body>
+		<section class="nav" id="header">
+			<a class="nav__logo" href="index.html"
+				><img
+					src="./Assets/rsz_2logo.png"
+					alt="website
+				logo"
+			/></a>
+			<article class="nav__menu">
+				<ul class="nav__items" id="navbar">
+					<a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#productsHeader">Products</a></li>
+					<li><a href="#footer">Contact</a></li>
+				</ul>
+			</article>
+			<article class="nav__hamburger" id="hamburger">
+				<a href="cartpage.html" id="shoppingCart"
+					><i class="fa-solid fa-cart-shopping"></i
+				></a>
+				<i id="bars" class="fa-solid fa-bars"></i>
+			</article>
+		</section>
+		<section class="confirm">
+			<article class="confirm__container">
+				<i class="fa-solid fa-bag-shopping"></i>
+				<h1>Thank you for shopping with us!</h1>
+				<h2>An order confirmation has been sent to your email.</h2>
+			</article>
+		</section>
+		<section class="footer" id="footer">
+			<article class="footer__container">
+				<article class="footer__icons">
+					<i class="fa-brands fa-instagram"></i>
+					<i class="fa-brands fa-facebook"></i>
+					<i class="fa-brands fa-twitter"></i>
+				</article>
+				<article class="footer__text">
+					<p>Lorem ipsum dolor sit.</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<p>Lorem ipsum dolor</p>
+				</article>
+			</article>
+		</section>
+
+		<script src="./JS/hamburger.ts"></script>
+		<script async src="./JS/main.ts" defer type="module"></script>
+		<script src="./JS/pdetailspage.ts" defer type="module"></script>
+	</body>
+</html>

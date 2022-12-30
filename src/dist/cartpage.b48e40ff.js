@@ -608,7 +608,7 @@ totalAmount.innerText = "Confirm order";
 let purchaseBtn = document.getElementById("purchaseBtn");
 purchaseBtn.addEventListener("click", ()=>{
     localStorage.clear();
-// Till confirmationpage.html
+    window.location.href = "./confirmation.html";
 });
 window.onload = ()=>{
     renderCart();

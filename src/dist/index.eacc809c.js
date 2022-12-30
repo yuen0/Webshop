@@ -532,68 +532,62 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"2rtbR":[function(require,module,exports) {
-//import { lsonload, pageload } from "./cart";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "cart", ()=>cart);
 var _renderproducts = require("./renderproducts");
-let cart = [];
-/*function initCart() {
-	for (let product of products) {
-		cart[product.name] = 0;
-	}
-}*/ window.onload = ()=>{
+let cart = JSON.parse(localStorage.getItem("cartItem") || "[]");
+window.onload = ()=>{
     (0, _renderproducts.renderProducts)();
-// renderInfo();
-//initCart();
-//pageload();
-//lsonload();
 };
 
 },{"./renderproducts":"cZjRU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cZjRU":[function(require,module,exports) {
-//import { totalSum } from "./cart";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "pdetails", ()=>pdetails);
 parcelHelpers.export(exports, "products", ()=>products);
 parcelHelpers.export(exports, "renderProducts", ()=>renderProducts);
-var _main = require("./main");
 let pdetails = [];
 const products = [
     {
-        name: "Butterkaka",
-        image: "butterkaka.jpeg",
-        description: "Mycket fin butterkaka.",
-        price: 59,
-        id: 1
+        name: "2-pack sweatpants",
+        image: "product1.png",
+        description: "Byxor i sweatshirtkvalitet av bomullsblandning med mjuk, borstad insida. Byxorna har res\xe5r och dragsko i midjan. Fickor i sids\xf6m och ribbad mudd vid benslut.",
+        price: 249,
+        id: 1,
+        quantity: 0
     },
     {
-        name: "Gel\xe9 n\xe5gonting",
-        image: "cake.jpg",
-        description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
-        price: 299,
-        id: 2
+        name: "Joggers",
+        image: "product2.png",
+        description: "Ett par joggers i sweatshirtkvalitet med avsmalnande ben och l\xe5g gren. De har res\xe5r och dragsko i midjan samt sidfickor med dragkedja. S\xf6mmar vid kn\xe4na och mudd vid benslut.",
+        price: 279,
+        id: 2,
+        quantity: 0
     },
     {
-        name: "An EXTREMELY spicy sauce",
-        image: "cake.jpg",
-        description: "F\xe5r dina smakl\xf6kar att dansa tango!",
+        name: "Huvtr\xf6ja Relaxed Fit",
+        image: "product3.png",
+        description: "En tr\xf6ja i bomullsblandad sweatshirtkvalitet med avslappnad passform. Tr\xf6jan har fodrad huva med dragsko. L\xe5ng \xe4rm och k\xe4nguruficka samt ribbad mudd vid \xe4rmslut och i nederkant. Mjuk, borstad insida.",
+        price: 199,
+        id: 3,
+        quantity: 0
+    },
+    {
+        name: "Rundhalsad T-shirt Regular Fit",
+        image: "product4.png",
+        description: "En T-shirt i mjuk bomullstrik\xe5 med klassisk passform. T-shirten har rund halsringning med ribbad mudd. Rakt skuren nederkant.",
         price: 79,
-        id: 3
+        id: 4,
+        quantity: 0
     },
     {
-        name: "I don't even know what this is",
-        image: "cake.jpg",
-        description: "Smakar verkligen inte gott.",
-        price: 59,
-        id: 4
-    },
-    {
-        name: "A unique sandwich",
-        image: "cake.jpg",
-        description: "An idiot-sandwich.",
-        price: 59,
-        id: 5
+        name: "2-pack pyjamasbyxa i bomull",
+        image: "product5.png",
+        description: "Tv\xe5 par pyjamasbyxor i luftig, v\xe4vd bomullskvalitet. Byxorna har kl\xe4dd res\xe5r och dragsko i midjan samt sidfickor. Fuskgylf.",
+        price: 299,
+        id: 5,
+        quantity: 0
     }
 ];
 function renderProducts() {
@@ -609,6 +603,8 @@ function renderProducts() {
         let pPrice = document.createElement("article");
         let pPriceValue = document.createElement("p");
         let button = document.createElement("button");
+        let createSelect = document.createElement("select");
+        let createOption = document.createElement("option");
         pCard.classList.add("products__card");
         pImgContainer.classList.add("products__img");
         //pImg.setAttribute("id", "")
@@ -622,14 +618,16 @@ function renderProducts() {
         button.classList.add("products__button");
         button.setAttribute("id", "addtocartBtn" + product.id);
         button.innerText = "Add to Cart";
+        createSelect.setAttribute("class", "select__quantity");
         container.appendChild(pCard);
-        pHeader.after(pCard);
         pCard.appendChild(pImgContainer);
         pCard.appendChild(pContent);
         pImgContainer.after(pContent);
         pImgContainer.appendChild(pImg);
         pContent.appendChild(pTitle);
         pContent.appendChild(pDesc);
+        pContent.appendChild(createSelect);
+        createSelect.appendChild(createOption);
         pContent.appendChild(pPrice);
         pContent.appendChild(button);
         pPrice.appendChild(pPriceValue);
@@ -637,6 +635,10 @@ function renderProducts() {
         pTitle.innerText = product.name;
         pDesc.innerText = product.description;
         pPriceValue.innerText = `${product.price.toString()} SEK`;
+        let maxnumber = 11;
+        let optionslist = "";
+        for(let x = 1; x < maxnumber; x++)optionslist += `<option value="${x}">  ${x}  </option>`;
+        createSelect.innerHTML = optionslist;
         //Stores object in localstorage when clicking each product.
         pCard.addEventListener("click", (e)=>{
             let target = e.target;
@@ -644,23 +646,26 @@ function renderProducts() {
                 return pTitle.id.includes(`productname${product.id}`);
             });
             if (!pInfo || target.className === "products__button") return;
+            if (!pInfo || target.className === "select__quantity") return;
             pdetails.push(pInfo);
             localStorage.setItem("pDetails", JSON.stringify(pdetails));
             window.location.href = "./pdetails.html";
         });
         //-->
         button?.addEventListener("click", ()=>{
-            let found = products?.find((product)=>{
+            let cart = JSON.parse(localStorage.getItem("cartItem") || "[]");
+            let found = products.find((product)=>{
                 return button.id.includes(`addtocartBtn${product.id}`);
             });
             if (!found) return;
-            (0, _main.cart).push(found);
-            localStorage.setItem("cartItem", JSON.stringify((0, _main.cart)));
+            found.quantity = Number(createSelect.value);
+            cart.push(found);
+            localStorage.setItem("cartItem", JSON.stringify(cart));
             let hamburgerSection = document.getElementById("hamburger");
             let span_total = document.createElement("span");
             let showTotal = document.getElementById("navTotalSum");
-            let totalSum = (0, _main.cart).reduce(function(acc, obj) {
-                return acc + obj.price;
+            let totalSum = cart.reduce(function(acc, obj) {
+                return acc + obj.price * obj.quantity;
             }, 0);
             if (document.getElementById("navTotalSum")) {
                 hamburgerSection.removeChild(showTotal);
@@ -677,6 +682,6 @@ function renderProducts() {
     }
 }
 
-},{"./main":"2rtbR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["gbk0u","2rtbR"], "2rtbR", "parcelRequire94c2")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["gbk0u","2rtbR"], "2rtbR", "parcelRequire94c2")
 
 //# sourceMappingURL=index.eacc809c.js.map

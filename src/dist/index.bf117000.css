@@ -1,7 +1,8 @@
 html, body {
+  min-height: 100vh;
   width: 100%;
-  height: 100%;
   margin: 0;
+  position: relative;
 }
 
 @media screen and (min-width: 1200px) {
@@ -192,8 +193,12 @@ html .hero p + p, body .hero p + p {
 
 * body .products {
   width: 90%;
-  margin: 15px auto;
+  margin: 0 auto;
   padding: 0 15px;
+}
+
+* body .products__container {
+  padding-bottom: 2%;
 }
 
 @media screen and (min-width: 1200px) {
@@ -381,6 +386,8 @@ html .hero p + p, body .hero p + p {
   justify-content: center;
   align-items: center;
   display: flex;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer__container {
@@ -588,6 +595,62 @@ html .hero p + p, body .hero p + p {
   margin-bottom: 8%;
   padding: 3% 6%;
   font-weight: bold;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #d1e4e4;
+  position: relative;
+}
+
+body .confirm__container {
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  display: flex;
+}
+
+@media screen and (min-width: 1200px) {
+  body .confirm__container {
+    margin-top: 200px;
+  }
+}
+
+body .confirm__container h1 {
+  padding: 2%;
+  font-size: 2em;
+}
+
+@media screen and (min-width: 1200px) {
+  body .confirm__container h1 {
+    padding: 1%;
+  }
+}
+
+body .confirm__container h2 {
+  padding: 2%;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 1200px) {
+  body .confirm__container h2 {
+    padding: 1%;
+  }
+}
+
+body .confirm__container i {
+  padding: 3%;
+  font-size: 3.5em;
+}
+
+@media screen and (min-width: 1200px) {
+  body .confirm__container i {
+    padding: 1.5%;
+  }
 }
 
 /*# sourceMappingURL=index.bf117000.css.map */

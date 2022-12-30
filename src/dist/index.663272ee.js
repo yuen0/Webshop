@@ -539,7 +539,9 @@ let description = document.getElementById("pDescription");
 let title = document.getElementById("pTitle");
 let price = document.getElementById("pPrice");
 let img = document.getElementById("pImg");
-renderInfo();
+window.onload = ()=>{
+    renderInfo();
+};
 function renderInfo() {
     if (!localStorage) return;
     let renderDetails = JSON.parse(localStorage.getItem("pDetails") || "");
