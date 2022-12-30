@@ -12,6 +12,7 @@ export const products = [
 
 		price: 249,
 		id: 1,
+		quantity: 0,
 	},
 	{
 		name: "Joggers",
@@ -22,6 +23,7 @@ export const products = [
 
 		price: 279,
 		id: 2,
+		quantity: 0,
 	},
 	{
 		name: "Huvtröja Relaxed Fit",
@@ -32,6 +34,7 @@ export const products = [
 
 		price: 199,
 		id: 3,
+		quantity: 0,
 	},
 	{
 		name: "Rundhalsad T-shirt Regular Fit",
@@ -42,6 +45,7 @@ export const products = [
 
 		price: 79,
 		id: 4,
+		quantity: 0,
 	},
 	{
 		name: "2-pack pyjamasbyxa i bomull",
@@ -50,6 +54,7 @@ export const products = [
 			"Två par pyjamasbyxor i luftig, vävd bomullskvalitet. Byxorna har klädd resår och dragsko i midjan samt sidfickor. Fuskgylf.",
 		price: 299,
 		id: 5,
+		quantity: 0,
 	},
 ];
 

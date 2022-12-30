@@ -37,7 +37,7 @@
 					<article class="cart__totalPrice">
 						<article class="cart__subtotal">
 							<span>Subtotal</span>
-							<span></span>
+							<span id="subtotalCost"></span>
 						</article>
 						<article class="cart__shipping">
 							<span>Shipping</span>
@@ -45,7 +45,7 @@
 						</article>
 						<article class="cart__total">
 							<span>Total</span>
-							<span></span>
+							<span id="totalCost"></span>
 						</article>
 					</article>
 				</section>
@@ -88,7 +88,9 @@
 							</article>
 						</form>
 					</article>
-					<button class="cart__button">Confirm Order</button>
+					<button class="cart__button" id="purchaseBtn">
+						<span id="totalAmount"></span>
+					</button>
 				</section>
 			</section>
 		</section>

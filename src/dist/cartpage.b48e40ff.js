@@ -532,17 +532,13 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"htCJt":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "cartItems", ()=>cartItems);
 const cartItems = JSON.parse(localStorage.cartItem);
-// function pageload(){if (!cartItems) {return;}}
 let totalSum = cartItems.reduce(function(acc, obj) {
-    return acc + obj.price;
+    return acc + obj.price * obj.quantity;
 }, 0);
 function renderCart() {
     let container = document.getElementById("cartContainer");
-    for (let cartItem of cartItems){
+    for(let i = 0; i < cartItems.length; i++){
         let pContainer = document.createElement("article");
         pContainer.classList.add("cart__product");
         let pImgContainer = document.createElement("article");
@@ -559,17 +555,19 @@ function renderCart() {
         qtyContainer.classList.add("cart__qty");
         let label = document.createElement("label");
         let select = document.createElement("select");
-        //options for quantity
-        for(let i = 1; i < 11; i++){
-            let option = document.createElement("option");
-            option.setAttribute("value", "");
-            option.innerText = `${i}`;
-            select.appendChild(option);
-        }
-        //
+        let maxnumber = 11;
+        let optionstlist = "";
+        for(let i1 = 0; i1 < maxnumber; i1++)optionstlist += `<option value="${i1}">${i1}</option>`;
+        select.innerHTML = optionstlist;
+        select.value = cartItems[i].quantity;
+        select.addEventListener("change", (ev)=>{
+            cartItems[i].quantity = Number(select.value);
+            localStorage.setItem("cartItem", JSON.stringify(cartItems));
+            window.location.reload();
+        });
         let priceContainer = document.createElement("article");
         priceContainer.classList.add("cart__price");
-        let price = document.createElement("span"); //innertext price
+        let price = document.createElement("span");
         let removeBtn = document.createElement("button");
         removeBtn.classList.add("cart__remove");
         let xIcon = document.createElement("span");
@@ -591,55 +589,29 @@ function renderCart() {
         removeBtn.appendChild(xIcon);
         label.innerText = "qty:";
         xIcon.innerText = "X";
-        pName.innerText = cartItem.name;
-        pImg.src = cartItem.image;
-        price.innerText = cartItem.price.toString() + " SEK";
+        pName.innerText = cartItems[i].name;
+        pImg.src = cartItems[i].image;
+        price.innerText = (cartItems[i].price * cartItems[i].quantity).toString() + " SEK";
+        removeBtn.addEventListener("click", ()=>{
+            cartItems.splice(i, 1);
+            localStorage.setItem("cartItem", JSON.stringify(cartItems));
+            window.location.reload();
+        });
     }
-// remove.addEventListener("click", () => {
-// 	/*let removeItem = cartItem.children(cartItem.id);
-//     if (removeItem) {
-//         cartItem.removeChild(removeItem);
-//     }*/
-// 	cartItems.splice(1, 1);
-// 	localStorage.setItem("cartItem", JSON.stringify(cartItems));
-// });
 }
-// purchaseBtn.addEventListener("click", ()=>{
-//     localStorage.clear();
-//     //Till confirmationpage.html
-// });
+let subTotal = document.getElementById("subtotalCost");
+let totalCost = document.getElementById("totalCost");
+let totalAmount = document.getElementById("totalAmount");
+subTotal.innerText = totalSum + " SEK";
+totalCost.innerText = totalSum + " SEK";
+totalAmount.innerText = "Confirm order";
+let purchaseBtn = document.getElementById("purchaseBtn");
+purchaseBtn.addEventListener("click", ()=>{
+    localStorage.clear();
+// Till confirmationpage.html
+});
 window.onload = ()=>{
     renderCart();
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
 };
 
 },{}]},["aLjh7","htCJt"], "htCJt", "parcelRequire94c2")
