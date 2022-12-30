@@ -17,7 +17,7 @@
 75C:\Users\Greattech\Desktop\Webshop\node_modules\supports-color\package.json133147326924402337 0
 59C:\Users\Greattech\Desktop\Webshop\src\dist\butterkaka.jpeg133166256406202544 0
 65C:\Users\Greattech\Desktop\Webshop\src\dist\index.c03ed4c9.js.map133162216820185987 0
-45C:\Users\Greattech\Desktop\Webshop\.gitignore133147328009585989 0
+45C:\Users\Greattech\Desktop\Webshop\.gitignore133168651720862182 0
 91C:\Users\Greattech\Desktop\Webshop\node_modules\update-browserslist-db\check-npm-version.js133147326923244051 0
 47C:\Users\Greattech\Desktop\Webshop\node_modules133166281664376108 1
 86C:\Users\Greattech\Desktop\Webshop\node_modules\css-tree\lib\syntax\atrule\supports.js133147326931787748 0
