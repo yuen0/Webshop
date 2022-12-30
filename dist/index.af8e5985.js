@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"dtgp2":[function(require,module,exports) {
+})({"bpPCk":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "af2c54e399966f83";
+module.bundle.HMR_BUNDLE_ID = "7a61ae24af8e5985";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -531,26 +531,157 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"dkN9q":[function(require,module,exports) {
+},{}],"2rtbR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "renderInfo", ()=>renderInfo);
-let description = document.getElementById("pDescription");
-let title = document.getElementById("pTitle");
-let price = document.getElementById("pPrice");
-let img = document.getElementById("pImg");
-function renderInfo() {
-    if (!localStorage) return;
-    let renderDetails = JSON.parse(localStorage.getItem("pDetails") || "");
-    title.innerText = renderDetails[0].name;
-    price.innerText = `${renderDetails[0].price}:-`;
-    description.innerText = renderDetails[0].description;
-    img.style.backgroundImage = `url(${renderDetails[0].image})`;
-    if (window.location.href !== "./pdetails.html") localStorage.removeItem("pDetails");
-}
+parcelHelpers.export(exports, "cart", ()=>cart);
+var _renderproducts = require("./renderproducts");
+let cart = JSON.parse(localStorage.getItem("cartItem") || "[]");
 window.onload = ()=>{
-    renderInfo();
+    (0, _renderproducts.renderProducts)();
 };
+
+},{"./renderproducts":"cZjRU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cZjRU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "pdetails", ()=>pdetails);
+parcelHelpers.export(exports, "products", ()=>products);
+parcelHelpers.export(exports, "renderProducts", ()=>renderProducts);
+let pdetails = [];
+const products = [
+    {
+        name: "Butterkaka",
+        image: "butterkaka.jpeg",
+        description: "Mycket fin butterkaka.",
+        price: 59,
+        id: 1,
+        quantity: 0
+    },
+    {
+        name: "Gel\xe9 n\xe5gonting",
+        image: "cake.jpg",
+        description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
+        price: 299,
+        id: 2,
+        quantity: 0
+    },
+    {
+        name: "An EXTREMELY spicy sauce",
+        image: "cake.jpg",
+        description: "F\xe5r dina smakl\xf6kar att dansa tango!",
+        price: 79,
+        id: 3,
+        quantity: 0
+    },
+    {
+        name: "I don't even know what this is",
+        image: "cake.jpg",
+        description: "Smakar verkligen inte gott.",
+        price: 59,
+        id: 4,
+        quantity: 0
+    },
+    {
+        name: "A unique sandwich",
+        image: "cake.jpg",
+        description: "An idiot-sandwich.",
+        price: 59,
+        id: 5,
+        quantity: 0
+    }
+];
+function renderProducts() {
+    for (let product of products){
+        let container = document.getElementById("productsContainer");
+        const pHeader = document.getElementById("productsHeader");
+        let pCard = document.createElement("article");
+        let pImgContainer = document.createElement("article");
+        let pImg = document.createElement("img");
+        let pContent = document.createElement("article");
+        let pTitle = document.createElement("h2");
+        let pDesc = document.createElement("p");
+        let pPrice = document.createElement("article");
+        let pPriceValue = document.createElement("p");
+        let button = document.createElement("button");
+        let createSelect = document.createElement("select");
+        let createOption = document.createElement("option");
+        pCard.classList.add("products__card");
+        pImgContainer.classList.add("products__img");
+        //pImg.setAttribute("id", "")
+        pContent.classList.add("products__content");
+        pTitle.setAttribute("id", "productname" + product.id);
+        pTitle.classList.add("products__title");
+        pDesc.classList.add("products__description");
+        pDesc.setAttribute("id", "productDescription" + product.id);
+        pPrice.classList.add("products__price");
+        pPriceValue.setAttribute("id", "productPrice" + product.id);
+        button.classList.add("products__button");
+        button.setAttribute("id", "addtocartBtn" + product.id);
+        button.innerText = "Add to Cart";
+        createSelect.setAttribute("class", "select__quantity");
+        container.appendChild(pCard);
+        pHeader.after(pCard);
+        pCard.appendChild(pImgContainer);
+        pCard.appendChild(pContent);
+        pImgContainer.after(pContent);
+        pImgContainer.appendChild(pImg);
+        pContent.appendChild(pTitle);
+        pContent.appendChild(pDesc);
+        pContent.appendChild(createSelect);
+        createSelect.appendChild(createOption);
+        pContent.appendChild(pPrice);
+        pContent.appendChild(button);
+        pPrice.appendChild(pPriceValue);
+        pImg.src = product.image;
+        pTitle.innerText = product.name;
+        pDesc.innerText = product.description;
+        pPriceValue.innerText = `${product.price.toString()} SEK`;
+        let maxnumber = 11;
+        let optionslist = "";
+        for(let x = 1; x < maxnumber; x++)optionslist += `<option value="${x}">  ${x}  </option>`;
+        createSelect.innerHTML = optionslist;
+        //Stores object in localstorage when clicking each product.
+        pCard.addEventListener("click", (e)=>{
+            let target = e.target;
+            let pInfo = products.find((product)=>{
+                return pTitle.id.includes(`productname${product.id}`);
+            });
+            if (!pInfo || target.className === "products__button") return;
+            if (!pInfo || target.className === "select__quantity") return;
+            pdetails.push(pInfo);
+            localStorage.setItem("pDetails", JSON.stringify(pdetails));
+            window.location.href = "./pdetails.html";
+        });
+        //-->
+        button?.addEventListener("click", ()=>{
+            let cart = JSON.parse(localStorage.getItem("cartItem") || "[]");
+            let found = products.find((product)=>{
+                return button.id.includes(`addtocartBtn${product.id}`);
+            });
+            if (!found) return;
+            found.quantity = Number(createSelect.value);
+            cart.push(found);
+            localStorage.setItem("cartItem", JSON.stringify(cart));
+            let hamburgerSection = document.getElementById("hamburger");
+            let span_total = document.createElement("span");
+            let showTotal = document.getElementById("navTotalSum");
+            let totalSum = cart.reduce(function(acc, obj) {
+                return acc + obj.price * obj.quantity;
+            }, 0);
+            if (document.getElementById("navTotalSum")) {
+                hamburgerSection.removeChild(showTotal);
+                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+                span_total.innerText = "Total:" + totalSum + " SEK";
+                span_total.setAttribute("id", "navTotalSum");
+            } else {
+                hamburgerSection?.appendChild(span_total);
+                hamburgerSection?.insertBefore(span_total, hamburgerSection.children[0]);
+                span_total.innerText = "Total:" + totalSum + " SEK";
+                span_total.setAttribute("id", "navTotalSum");
+            }
+        });
+    }
+}
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -582,6 +713,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["dtgp2","dkN9q"], "dkN9q", "parcelRequire94c2")
+},{}]},["bpPCk","2rtbR"], "2rtbR", "parcelRequire94c2")
 
-//# sourceMappingURL=index.99966f83.js.map
+//# sourceMappingURL=index.af8e5985.js.map

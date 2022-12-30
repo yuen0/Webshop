@@ -1,237 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<script
-			src="https://kit.fontawesome.com/193ad45445.js"
-			crossorigin="anonymous"
-			defer
-		></script>
-		<link rel="stylesheet" href="SCSS/main.scss" />
-	</head>
-	<body>
-		<section id="header">
-			<a href="index.html"
-				><img
-					src="./Assets/rsz_2logo.png"
-					alt="website
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/193ad45445.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link rel="stylesheet" href="SCSS/main.scss" />
+  </head>
+  <body>
+    <section id="header">
+      <a href="index.html"
+        ><img
+          src="./Assets/rsz_2logo.png"
+          alt="website
 				logo"
-			/></a>
-			<article>
-				<ul id="navbar">
-					<a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="#">Products</a></li>
-					<li><a href="./pdetails.html">Lorem</a></li>
-					<!-- <li> //!!ska läggas till i desktop versionen!!
-						<a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-					</li> -->
-				</ul>
-			</article>
-			<article id="hamburger">
-				<a href="#" id="shoppingCart"
-					><i class="fa-solid fa-cart-shopping"></i
-				></a>
-				<i id="bars" class="fa-solid fa-bars"></i>
-			</article>
-		</section>
-		<section class="cart" id="cart">
-			<h1 class="cart__header">
-				<i class="fa-solid fa-cart-shopping"></i> Shopping Cart
-			</h1>
+      /></a>
+      <article>
+        <ul id="navbar">
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="./pdetails.html">Lorem</a></li>
+        </ul>
+      </article>
+      <article id="hamburger">
+        <a href="#" id="shoppingCart"
+          ><i class="fa-solid fa-cart-shopping"></i
+        ></a>
+        <i id="bars" class="fa-solid fa-bars"></i>
+      </article>
+    </section>
+    <section class="cart" id="cart">
+      <h1 class="cart__header">
+        <i class="fa-solid fa-cart-shopping"></i> Shopping Cart
+      </h1>
 
-			<section class="cart__container">
-				<section class="cart__itemContainer">
-					<h2 class="cart__heading">Order Summary</h2>
-					<article class="cart__productCard" id="cartContainer">
-						<!-- <article class="cart__product">
-							<article class="cart__imgContainer">
-								<img
-									class="cart__img"
-									src="./Assets/product2.png"
-									alt="photo of product"
-								/>
-							</article>
-							<article class="cart__productDetails">
-								<h4 class="cart__productName">
-									Lorem ipsum dolor sit amet consectetur adipisicing
-								</h4>
-								<article class="cart__detailContainer">
-									<article class="cart__qty">
-										<label for="product-quantity">qty:</label>
-										<select name="product-quantity" id="qty">
-											<option value="">1</option>
-											<option value="">2</option>
-											<option value="">3</option>
-											<option value="">4</option>
-											<option value="">5</option>
-											<option value="">6</option>
-											<option value="">7</option>
-											<option value="">8</option>
-										</select>
+      <section class="cart__container">
+        <section class="cart__itemContainer">
+          <h2 class="cart__heading">Order Summary</h2>
+          <article class="cart__productCard" id="cartContainer"></article>
+          <article class="cart__totalPrice">
+            <article class="cart__subtotal">
+              <span>Subtotal</span>
+              <span id="subtotalCost"></span>
+            </article>
+            <article class="cart__shipping">
+              <span>Shipping</span>
+              <span>Free</span>
+            </article>
+            <article class="cart__total">
+              <span>Total</span>
+              <span id="totalCost"></span>
+            </article>
+          </article>
+        </section>
 
-										<article class="cart__price">
-											<span>59 SEK</span>
-										</article>
-									</article>
-								</article>
-							</article>
-							<button class="cart__remove"></button>
-						</article>
-						<article class="cart__product">
-							<article class="cart__imgContainer">
-								<img
-									class="cart__img"
-									src="./Assets/product2.png"
-									alt="photo of product"
-								/>
-							</article>
-							<article class="cart__productDetails">
-								<h4 class="cart__productName">LOrem ipsum</h4>
-								<article class="cart__detailContainer">
-									<article class="cart__qty">
-										<label for="product-quantity">qty:</label>
-										<select name="product-quantity" id="qty">
-											<option value="">1</option>
-											<option value="">2</option>
-											<option value="">3</option>
-											<option value="">4</option>
-											<option value="">5</option>
-											<option value="">6</option>
-											<option value="">7</option>
-											<option value="">8</option>
-										</select>
-										<article class="cart__price">
-											<span>59 SEK</span>
-										</article>
-									</article>
-								</article>
-							</article>
-							<button class="cart__remove">
-								<i class="fa-solid fa-x"></i>
-							</button>
-						</article> -->
-					</article>
-					<article class="cart__totalPrice">
-						<article class="cart__subtotal">
-							<span>Subtotal</span>
-							<span>59 SEK</span>
-						</article>
-						<article class="cart__shipping">
-							<span>Shipping</span>
-							<span>49 SEK</span>
-						</article>
-						<article class="cart__total">
-							<span>Total</span>
-							<span>108 SEK</span>
-						</article>
-					</article>
-				</section>
+        <section class="cart__checkout">
+          <h2 class="cart__heading">Payment Details</h2>
+          <article class="cart__payment">
+            <article class="cart__method">
+              <button class="cart__card">
+                <article class="cart__creditCard">
+                  <i class="fa-solid fa-credit-card"></i>
+                  <span>Credit Card</span>
+                </article>
+                <article class="cart__checkmark">
+                  <i class="fa-solid fa-square-check"></i>
+                </article>
+              </button>
+            </article>
+            <form action="#">
+              <article class="cart__cName">
+                <label for="card-name" class="cart_cNameLabel"
+                  >Cardholder name</label
+                >
+                <input
+                  type="text"
+                  name="card-name"
+                  id="cardName"
+                  class="cart__inputCName"
+                  placeholder="e.g. John Smith"
+                />
+              </article>
+              <article class="cart__cNumber">
+                <label for="card-number" class="cart_cNumberLabel"
+                  >Cardholder number</label
+                >
+                <input
+                  type="number"
+                  name="card-number"
+                  id="cardNumber"
+                  class="cart__inputCNumber"
+                  placeholder="e.g. 1234 567 789"
+                />
+              </article>
 
-				<section class="cart__checkout">
-					<h2 class="cart__heading">Payment Details</h2>
-					<article class="cart__payment">
-						<article class="cart__method">
-							<button class="cart__card">
-								<article class="cart__creditCard">
-									<i class="fa-solid fa-credit-card"></i>
-									<span>Credit Card</span>
-								</article>
-								<article class="cart__checkmark">
-									<i class="fa-solid fa-square-check"></i>
-								</article>
-							</button>
-						</article>
-						<form action="#">
-							<article class="cart__cName">
-								<label for="card-name" class="cart_cNameLabel"
-									>Cardholder name</label
-								>
-								<input
-									type="text"
-									name="card-name"
-									id="cardName"
-									class="cart__inputCName"
-									placeholder="e.g. John Smith"
-								/>
-							</article>
-							<article class="cart__cNumber">
-								<label for="card-number" class="cart_cNumberLabel"
-									>Cardholder number</label
-								>
-								<input
-									type="number"
-									name="card-number"
-									id="cardNumber"
-									class="cart__inputCNumber"
-									placeholder="e.g. 1234 567 789"
-								/>
-							</article>
+              <article class="cart__cDate">
+                <label for="expiry-date" class="cart__cDateLabel"
+                  >Expiration date</label
+                >
+                <article class="cart__cDateInput">
+                  <input
+                    type="number"
+                    name="day"
+                    min="1"
+                    max="31"
+                    class="cart__inputDay"
+                    placeholder="25"
+                  />
+                  <span>/</span>
+                  <input
+                    type="number"
+                    name="month"
+                    min="1"
+                    max="12"
+                    placeholder="12"
+                    class="cart__inputMonth"
+                  />
+                </article>
+                <article class="cart__cCvv">
+                  <label for="cvv" class="cart__cCvvLabel">CVV</label>
+                  <input
+                    type="number"
+                    placeholder="123"
+                    min="0"
+                    max="999"
+                    name="cvv"
+                    class="cart__cCvvInput"
+                  />
+                </article>
+              </article>
+            </form>
+          </article>
+          <button class="cart__button" id="purchaseBtn">
+            <span id="totalAmount"></span>
+          </button>
+        </section>
+      </section>
+    </section>
 
-							<article class="cart__cDate">
-								<label for="expiry-date" class="cart__cDateLabel"
-									>Expiration date</label
-								>
-								<article class="cart__cDateInput">
-									<input
-										type="number"
-										name="day"
-										min="1"
-										max="31"
-										class="cart__inputDay"
-										placeholder="25"
-									/>
-									<span>/</span>
-									<input
-										type="number"
-										name="month"
-										min="1"
-										max="12"
-										placeholder="12"
-										class="cart__inputMonth"
-									/>
-								</article>
-								<article class="cart__cCvv">
-									<label for="cvv" class="cart__cCvvLabel">CVV</label>
-									<input
-										type="number"
-										placeholder="123"
-										min="0"
-										max="999"
-										name="cvv"
-										class="cart__cCvvInput"
-									/>
-								</article>
-							</article>
-						</form>
-					</article>
-					<button class="cart__button">
-						Pay<span id="totalAmount"> 108SEK</span>
-					</button>
-				</section>
-			</section>
-		</section>
+    <section class="footer">
+      <article class="footer__container">
+        <article class="footer__icons">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </article>
+        <article class="footer__text">
+          <p>Lorem ipsum dolor sit.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor</p>
+        </article>
+      </article>
+    </section>
 
-		<section class="footer">
-			<article class="footer__container">
-				<article class="footer__icons">
-					<i class="fa-brands fa-instagram"></i>
-					<i class="fa-brands fa-facebook"></i>
-					<i class="fa-brands fa-twitter"></i>
-				</article>
-				<article class="footer__text">
-					<p>Lorem ipsum dolor sit.</p>
-					<p>Lorem ipsum dolor sit amet.</p>
-					<p>Lorem ipsum dolor</p>
-				</article>
-			</article>
-		</section>
+    <script src="./JS/hamburger.ts"></script>
 
-		<script src="./JS/hamburger.ts"></script>
-
-		<script async src="./JS/cart.ts" defer type="module"></script>
-	</body>
+    <script async src="./JS/cart.ts" defer type="module"></script>
+  </body>
 </html>

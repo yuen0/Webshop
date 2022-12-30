@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"dtgp2":[function(require,module,exports) {
+})({"3ReBU":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "af2c54e399966f83";
+module.bundle.HMR_BUNDLE_ID = "34c70f3fe4eac1a5";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -531,57 +531,89 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"dkN9q":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "renderInfo", ()=>renderInfo);
-let description = document.getElementById("pDescription");
-let title = document.getElementById("pTitle");
-let price = document.getElementById("pPrice");
-let img = document.getElementById("pImg");
-function renderInfo() {
-    if (!localStorage) return;
-    let renderDetails = JSON.parse(localStorage.getItem("pDetails") || "");
-    title.innerText = renderDetails[0].name;
-    price.innerText = `${renderDetails[0].price}:-`;
-    description.innerText = renderDetails[0].description;
-    img.style.backgroundImage = `url(${renderDetails[0].image})`;
-    if (window.location.href !== "./pdetails.html") localStorage.removeItem("pDetails");
-}
-window.onload = ()=>{
-    renderInfo();
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
+},{}],"htCJt":[function(require,module,exports) {
+const cartItems = JSON.parse(localStorage.cartItem);
+let totalSum = cartItems.reduce(function(acc, obj) {
+    return acc + obj.price * obj.quantity;
+}, 0);
+function renderCart() {
+    let container = document.getElementById("cartContainer");
+    for(let i = 0; i < cartItems.length; i++){
+        let pContainer = document.createElement("article");
+        pContainer.classList.add("cart__product");
+        let pImgContainer = document.createElement("article");
+        pImgContainer.classList.add("cart__imgContainer");
+        let pImg = document.createElement("img");
+        pImg.classList.add("cart__img");
+        let prodDetails = document.createElement("article");
+        prodDetails.classList.add("cart__productDetails");
+        let pName = document.createElement("h4");
+        pName.classList.add("cart__productName");
+        let detailContainer = document.createElement("article");
+        detailContainer.classList.add("cart__detailContainer");
+        let qtyContainer = document.createElement("article");
+        qtyContainer.classList.add("cart__qty");
+        let label = document.createElement("label");
+        let select = document.createElement("select");
+        let maxnumber = 11;
+        let optionstlist = "";
+        for(let i1 = 0; i1 < maxnumber; i1++)optionstlist += `<option value="${i1}">${i1}</option>`;
+        select.innerHTML = optionstlist;
+        select.value = cartItems[i].quantity;
+        select.addEventListener("change", (ev)=>{
+            cartItems[i].quantity = Number(select.value);
+            localStorage.setItem("cartItem", JSON.stringify(cartItems));
+            window.location.reload();
         });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
+        let priceContainer = document.createElement("article");
+        priceContainer.classList.add("cart__price");
+        let price = document.createElement("span");
+        let removeBtn = document.createElement("button");
+        removeBtn.classList.add("cart__remove");
+        let xIcon = document.createElement("span");
+        label.setAttribute("for", "product-quantity");
+        select.setAttribute("name", "product-quantity");
+        select.setAttribute("id", "qty");
+        container.appendChild(pContainer);
+        pContainer.appendChild(pImgContainer);
+        pImgContainer.appendChild(pImg);
+        pContainer.appendChild(prodDetails);
+        prodDetails.appendChild(pName);
+        prodDetails.appendChild(detailContainer);
+        detailContainer.appendChild(qtyContainer);
+        qtyContainer.appendChild(label);
+        qtyContainer.appendChild(select);
+        qtyContainer.appendChild(priceContainer);
+        priceContainer.appendChild(price);
+        pContainer.appendChild(removeBtn);
+        removeBtn.appendChild(xIcon);
+        label.innerText = "qty:";
+        xIcon.innerText = "X";
+        pName.innerText = cartItems[i].name;
+        pImg.src = cartItems[i].image;
+        price.innerText = (cartItems[i].price * cartItems[i].quantity).toString() + " SEK";
+        removeBtn.addEventListener("click", ()=>{
+            cartItems.splice(i, 1);
+            localStorage.setItem("cartItem", JSON.stringify(cartItems));
+            window.location.reload();
+        });
+    }
+}
+let subTotal = document.getElementById("subtotalCost");
+let totalCost = document.getElementById("totalCost");
+let totalAmount = document.getElementById("totalAmount");
+subTotal.innerText = totalSum + " SEK";
+totalCost.innerText = totalSum + " SEK";
+totalAmount.innerText = "Confirm order";
+let purchaseBtn = document.getElementById("purchaseBtn");
+purchaseBtn.addEventListener("click", ()=>{
+    localStorage.clear();
+// Till confirmationpage.html
+});
+window.onload = ()=>{
+    renderCart();
 };
 
-},{}]},["dtgp2","dkN9q"], "dkN9q", "parcelRequire94c2")
+},{}]},["3ReBU","htCJt"], "htCJt", "parcelRequire94c2")
 
-//# sourceMappingURL=index.99966f83.js.map
+//# sourceMappingURL=cartpage.e4eac1a5.js.map
