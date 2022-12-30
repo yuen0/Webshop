@@ -4,6 +4,12 @@ html, body {
   margin: 0;
 }
 
+@media screen and (min-width: 1200px) {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+
 html .nav, body .nav {
   height: 7%;
   width: 100%;
@@ -174,6 +180,12 @@ html .hero p + p, body .hero p + p {
   padding: 0;
 }
 
+@media screen and (min-width: 1200px) {
+  * {
+    cursor: pointer;
+  }
+}
+
 * body {
   font-size: 14px;
 }
@@ -264,6 +276,21 @@ html .hero p + p, body .hero p + p {
   border-radius: 12px;
   padding: 12px 0;
   font-weight: bold;
+  transition: all .2s;
+}
+
+@media screen and (min-width: 1200px) {
+  * body .products__button:hover {
+    background-color: #7ac8c8;
+  }
+
+  * body .products__button:active {
+    background-color: #3b6262;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
 }
 
 .pInfo {
@@ -373,6 +400,12 @@ html .hero p + p, body .hero p + p {
 
 .footer__container .footer__text p {
   padding-top: 5%;
+}
+
+@media screen and (min-width: 1200px) {
+  * {
+    scroll-behavior: smooth;
+  }
 }
 
 .cart {

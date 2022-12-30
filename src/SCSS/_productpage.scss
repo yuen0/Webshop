@@ -5,6 +5,10 @@
 	padding: 0;
 	box-sizing: border-box;
 
+	@include m.desktop {
+		cursor: pointer;
+	}
+
 	body {
 		font-size: 14px;
 
@@ -85,6 +89,15 @@
 			color: white;
 			font-weight: bold;
 			width: 100%;
+			transition: 0.2s;
+		}
+		@include m.desktop {
+			.products__button:hover {
+				background-color: rgb(122, 200, 200);
+			}
+			.products__button:active {
+				background-color: rgb(59, 98, 98);
+			}
 		}
 	}
 }

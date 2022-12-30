@@ -1,3 +1,9 @@
+@use "mixins" as m;
+* {
+	@include m.desktop {
+		scroll-behavior: smooth;
+	}
+}
 .pInfo {
 	width: 100%;
 

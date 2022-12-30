@@ -1,3 +1,10 @@
+@use "mixins" as m;
+
+* {
+	@include m.desktop {
+		scroll-behavior: smooth;
+	}
+}
 .cart {
 	width: 100%;
 	margin: 0 auto;
