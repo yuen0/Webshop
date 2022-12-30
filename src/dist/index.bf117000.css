@@ -33,6 +33,7 @@ html .nav, body .nav {
 html .nav .nav__items, body .nav .nav__items {
   height: 100%;
   width: 60%;
+  z-index: 1;
   background-color: #467676;
   flex-direction: column;
   justify-content: flex-start;
@@ -137,7 +138,7 @@ html .nav .nav__hamburger a + i, body .nav .nav__hamburger a + i {
 }
 
 html .hero, body .hero {
-  height: 70%;
+  min-height: 75vh;
   width: 100%;
   background-image: url("hero.6fc90303.jpg");
   background-position: 100% 0;
@@ -171,6 +172,7 @@ html .hero p + p, body .hero p + p {
   }
 
   html .hero, body .hero {
+    min-height: 80vh;
     background-position: 150% 0;
   }
 }
@@ -386,8 +388,7 @@ html .hero p + p, body .hero p + p {
   justify-content: center;
   align-items: center;
   display: flex;
-  position: absolute;
-  bottom: 0;
+  position: relative;
 }
 
 .footer__container {
@@ -595,6 +596,17 @@ html .hero p + p, body .hero p + p {
   margin-bottom: 8%;
   padding: 3% 6%;
   font-weight: bold;
+  transition: all .2s;
+}
+
+@media screen and (min-width: 1200px) {
+  .cart__container .cart__checkout .cart__button:hover {
+    background-color: #3fcfc0;
+  }
+
+  .cart__container .cart__checkout .cart__button:active {
+    background-color: #1c5c56;
+  }
 }
 
 body {
@@ -603,20 +615,21 @@ body {
   position: relative;
 }
 
+body .confirm {
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+
 body .confirm__container {
   width: 100%;
   text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 250px;
   display: flex;
-}
-
-@media screen and (min-width: 1200px) {
-  body .confirm__container {
-    margin-top: 200px;
-  }
 }
 
 body .confirm__container h1 {

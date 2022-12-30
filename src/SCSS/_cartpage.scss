@@ -176,8 +176,17 @@
 				margin-bottom: 8%;
 				color: white;
 				font-weight: bold;
-
+				transition: 0.2s;
 				background-color: rgb(52, 170, 158);
+			}
+
+			@include m.desktop {
+				.cart__button:hover {
+					background-color: rgb(63, 207, 192);
+				}
+				.cart__button:active {
+					background-color: rgb(28, 92, 86);
+				}
 			}
 		}
 	}

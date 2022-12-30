@@ -40,6 +40,7 @@ body {
 			padding: 10% 0 0 7%;
 			background-color: rgb(70, 118, 118);
 			transition: 0.3s;
+			z-index: 1;
 
 			@include m.desktop {
 				flex-direction: row;
@@ -140,7 +141,7 @@ body {
 		}
 
 		background-image: url("../Assets/hero.jpg");
-		height: 70%;
+		min-height: 75vh;
 		width: 100%;
 		background-position: top 0 left 100%;
 		background-size: cover;
@@ -152,6 +153,7 @@ body {
 
 		@include m.desktop {
 			background-position: top 0 left 150%;
+			min-height: 80vh;
 		}
 	}
 }
