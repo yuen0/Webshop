@@ -95,7 +95,6 @@ export function renderProducts() {
 		createSelect.setAttribute("class", "select__quantity");
 
 		container.appendChild(pCard);
-		// pHeader.after(pCard);
 		pCard.appendChild(pImgContainer);
 		pCard.appendChild(pContent);
 

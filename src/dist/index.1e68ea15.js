@@ -620,7 +620,6 @@ function renderProducts() {
         button.innerText = "Add to Cart";
         createSelect.setAttribute("class", "select__quantity");
         container.appendChild(pCard);
-        // pHeader.after(pCard);
         pCard.appendChild(pImgContainer);
         pCard.appendChild(pContent);
         pImgContainer.after(pContent);
