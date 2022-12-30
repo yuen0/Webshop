@@ -561,38 +561,38 @@ var _main = require("./main");
 let pdetails = [];
 const products = [
     {
-        name: "Butterkaka",
-        image: "butterkaka.jpeg",
-        description: "Mycket fin butterkaka.",
-        price: 59,
+        name: "2-pack sweatpants",
+        image: "product1.png",
+        description: "Byxor i sweatshirtkvalitet av bomullsblandning med mjuk, borstad insida. Byxorna har res\xe5r och dragsko i midjan. Fickor i sids\xf6m och ribbad mudd vid benslut.",
+        price: 249,
         id: 1
     },
     {
-        name: "Gel\xe9 n\xe5gonting",
-        image: "cake.jpg",
-        description: "Sp\xe4nnande konsistens f\xf6r alla kulinariska mesar.",
-        price: 299,
+        name: "Joggers",
+        image: "product2.png",
+        description: "Ett par joggers i sweatshirtkvalitet med avsmalnande ben och l\xe5g gren. De har res\xe5r och dragsko i midjan samt sidfickor med dragkedja. S\xf6mmar vid kn\xe4na och mudd vid benslut.",
+        price: 279,
         id: 2
     },
     {
-        name: "An EXTREMELY spicy sauce",
-        image: "cake.jpg",
-        description: "F\xe5r dina smakl\xf6kar att dansa tango!",
-        price: 79,
+        name: "Huvtr\xf6ja Relaxed Fit",
+        image: "product3.png",
+        description: "En tr\xf6ja i bomullsblandad sweatshirtkvalitet med avslappnad passform. Tr\xf6jan har fodrad huva med dragsko. L\xe5ng \xe4rm och k\xe4nguruficka samt ribbad mudd vid \xe4rmslut och i nederkant. Mjuk, borstad insida.",
+        price: 199,
         id: 3
     },
     {
-        name: "I don't even know what this is",
-        image: "cake.jpg",
-        description: "Smakar verkligen inte gott.",
-        price: 59,
+        name: "Rundhalsad T-shirt Regular Fit",
+        image: "product4.png",
+        description: "En T-shirt i mjuk bomullstrik\xe5 med klassisk passform. T-shirten har rund halsringning med ribbad mudd. Rakt skuren nederkant.",
+        price: 79,
         id: 4
     },
     {
-        name: "A unique sandwich",
-        image: "cake.jpg",
-        description: "An idiot-sandwich.",
-        price: 59,
+        name: "2-pack pyjamasbyxa i bomull",
+        image: "product5.png",
+        description: "Tv\xe5 par pyjamasbyxor i luftig, v\xe4vd bomullskvalitet. Byxorna har kl\xe4dd res\xe5r och dragsko i midjan samt sidfickor. Fuskgylf.",
+        price: 299,
         id: 5
     }
 ];
@@ -623,7 +623,7 @@ function renderProducts() {
         button.setAttribute("id", "addtocartBtn" + product.id);
         button.innerText = "Add to Cart";
         container.appendChild(pCard);
-        pHeader.after(pCard);
+        // pHeader.after(pCard);
         pCard.appendChild(pImgContainer);
         pCard.appendChild(pContent);
         pImgContainer.after(pContent);

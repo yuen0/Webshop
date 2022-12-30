@@ -4,7 +4,13 @@ html, body {
   margin: 0;
 }
 
-html #header, body #header {
+@media screen and (min-width: 1200px) {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+
+html .nav, body .nav {
   height: 7%;
   width: 100%;
   background-color: #2f4f4f;
@@ -13,7 +19,17 @@ html #header, body #header {
   display: flex;
 }
 
-html #header #navbar, body #header #navbar {
+@media screen and (min-width: 1200px) {
+  html .nav, body .nav {
+    justify-content: space-between;
+  }
+
+  html .nav .nav__menu, body .nav .nav__menu {
+    width: 50%;
+  }
+}
+
+html .nav .nav__items, body .nav .nav__items {
   height: 100%;
   width: 60%;
   background-color: #467676;
@@ -29,17 +45,51 @@ html #header #navbar, body #header #navbar {
   right: -100%;
 }
 
-html #header #navbar li, body #header #navbar li {
+@media screen and (min-width: 1200px) {
+  html .nav .nav__items, body .nav .nav__items {
+    width: 100%;
+    background-color: #2f4f4f;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    transition: none;
+    position: relative;
+    right: 0;
+  }
+}
+
+html .nav .nav__items li, body .nav .nav__items li {
   margin-top: 7%;
   list-style: none;
+  transition: all .2s;
 }
 
-html #header #navbar li a, body #header #navbar li a {
+@media screen and (min-width: 1200px) {
+  html .nav .nav__items li, body .nav .nav__items li {
+    margin: 0;
+  }
+
+  html .nav .nav__items li a:hover, body .nav .nav__items li a:hover {
+    color: #9a9a9a;
+  }
+}
+
+html .nav .nav__items li a, body .nav .nav__items li a {
   color: #fff;
   text-decoration: none;
+  transition: all .2s;
 }
 
-html #header #navbar #close, body #header #navbar #close {
+@media screen and (min-width: 1200px) {
+  html .nav .nav__items li a, body .nav .nav__items li a {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+
+html .nav .nav__items #close, body .nav .nav__items #close {
   color: #fff;
   padding-bottom: 6%;
   font-size: 1.8em;
@@ -47,21 +97,45 @@ html #header #navbar #close, body #header #navbar #close {
   top: 2%;
 }
 
-html #header #navbar.active, body #header #navbar.active {
+@media screen and (min-width: 1200px) {
+  html .nav .nav__items #close, body .nav .nav__items #close {
+    display: none;
+  }
+}
+
+html .nav #navbar.active, body .nav #navbar.active {
   right: 0;
 }
 
-html #header #hamburger, body #header #hamburger {
+html .nav .nav__hamburger, body .nav .nav__hamburger {
+  color: #fff;
   padding-right: 1.5em;
 }
 
-html #header #hamburger i, body #header #hamburger i {
+html .nav .nav__hamburger a, body .nav .nav__hamburger a {
   color: #fff;
+  font-size: 1.5em;
+  transition: all .2s;
+}
+
+@media screen and (min-width: 1200px) {
+  html .nav .nav__hamburger a:hover, body .nav .nav__hamburger a:hover {
+    color: #9a9a9a;
+  }
+}
+
+html .nav .nav__hamburger a + i, body .nav .nav__hamburger a + i {
   padding-left: .6em;
   font-size: 1.5em;
 }
 
-html #hero, body #hero {
+@media screen and (min-width: 1200px) {
+  html .nav .nav__hamburger a + i, body .nav .nav__hamburger a + i {
+    display: none;
+  }
+}
+
+html .hero, body .hero {
   height: 70%;
   width: 100%;
   background-image: url("hero.6fc90303.jpg");
@@ -74,14 +148,42 @@ html #hero, body #hero {
   display: flex;
 }
 
-html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body #hero h4 {
+html .hero p, body .hero p {
   margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1200px) {
+  html .hero p, body .hero p {
+    font-size: 2em;
+  }
+}
+
+html .hero p + p, body .hero p + p {
+  font-size: 2em;
+}
+
+@media screen and (min-width: 1200px) {
+  html .hero p + p, body .hero p + p {
+    font-size: 2.8em;
+  }
+
+  html .hero, body .hero {
+    background-position: 150% 0;
+  }
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  * {
+    cursor: pointer;
+  }
 }
 
 * body {
@@ -94,10 +196,26 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   padding: 0 15px;
 }
 
+@media screen and (min-width: 1200px) {
+  * body .products__container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 4%;
+    display: flex;
+  }
+}
+
 * body .products__header {
   text-align: center;
   padding-bottom: 5%;
   font-size: 2.5em;
+}
+
+@media screen and (min-width: 1200px) {
+  * body .products__header {
+    padding-top: 3%;
+    padding-bottom: 2%;
+  }
 }
 
 * body .products__card {
@@ -108,6 +226,13 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   margin-bottom: 10%;
   display: grid;
   overflow: hidden;
+}
+
+@media screen and (min-width: 1200px) {
+  * body .products__card {
+    flex-basis: 25%;
+    margin: 2% 3%;
+  }
 }
 
 * body .products__img img {
@@ -151,6 +276,22 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
   border-radius: 12px;
   padding: 12px 0;
   font-weight: bold;
+  transition: all .2s;
+}
+
+@media screen and (min-width: 1200px) {
+  * body .products__button:hover {
+    background-color: #7ac8c8;
+  }
+
+  * body .products__button:active {
+    background-color: #3b6262;
+  }
+
+  * {
+    scroll-behavior: smooth;
+    cursor: pointer;
+  }
 }
 
 .pInfo {
@@ -235,6 +376,7 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
 .footer {
   color: #fff;
   text-align: center;
+  width: 100%;
   background-color: #2f4f4f;
   justify-content: center;
   align-items: center;
@@ -259,6 +401,13 @@ html #hero h1, html #hero h2, html #hero h4, body #hero h1, body #hero h2, body 
 
 .footer__container .footer__text p {
   padding-top: 5%;
+}
+
+@media screen and (min-width: 1200px) {
+  * {
+    scroll-behavior: smooth;
+    cursor: pointer;
+  }
 }
 
 .cart {
