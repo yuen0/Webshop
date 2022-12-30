@@ -1,3 +1,5 @@
+@use "mixins" as m;
+
 * {
 	margin: 0;
 	padding: 0;
@@ -11,10 +13,24 @@
 			padding: 0 15px;
 			width: 90%;
 		}
+
+		.products__container {
+			@include m.desktop {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+				padding-bottom: 4%;
+			}
+		}
 		.products__header {
 			font-size: 2.5em;
 			text-align: center;
 			padding-bottom: 5%;
+
+			@include m.desktop {
+				padding-top: 3%;
+				padding-bottom: 2%;
+			}
 		}
 
 		.products__card {
@@ -25,6 +41,12 @@
 			background-color: rgb(208, 207, 207);
 			border-radius: 15px;
 			overflow: hidden;
+
+			@include m.desktop {
+				// width: 25%;
+				flex-basis: 25%;
+				margin: 2% 3% 2% 3%;
+			}
 		}
 		.products__img img {
 			width: 100%;

@@ -623,7 +623,7 @@ function renderProducts() {
         button.setAttribute("id", "addtocartBtn" + product.id);
         button.innerText = "Add to Cart";
         container.appendChild(pCard);
-        pHeader.after(pCard);
+        // pHeader.after(pCard);
         pCard.appendChild(pImgContainer);
         pCard.appendChild(pContent);
         pImgContainer.after(pContent);

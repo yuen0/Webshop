@@ -9,36 +9,32 @@
 		<link rel="stylesheet" href="/index.bf117000.css">
 	</head>
 	<body>
-		<section id="header">
-			<a href=""><img src="/rsz_2logo.76b9c392.png" alt="website
+		<section class="nav" id="header">
+			<a class="nav__logo" href="/index.html"><img src="/rsz_2logo.76b9c392.png" alt="website
 				logo"></a>
-			<article>
-				<ul id="navbar">
+			<article class="nav__menu">
+				<ul class="nav__items" id="navbar">
 					<a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
 					<li><a href="/index.html">Home</a></li>
 					<li><a href="#">Products</a></li>
 					<li><a href="/pdetails.html">Lorem</a></li>
-					<!-- <li> //!!ska läggas till i desktop versionen!!
-						<a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-					</li> -->
 				</ul>
 			</article>
-			<article id="hamburger">
+			<article class="nav__hamburger" id="hamburger">
 				<a href="/cartpage.html" id="shoppingCart"><i class="fa-solid fa-cart-shopping"></i></a>
 				<i id="bars" class="fa-solid fa-bars"></i>
 			</article>
 		</section>
 
-		<section id="hero">
-			<h4>Lorem ipsum</h4>
-			<h2>Dolor sit amet</h2>
-			<h1>consectetur adipiscing elit</h1>
+		<section class="hero" id="hero">
+			<p>Lorem ipsum</p>
+			<p>Dolor sit amet</p>
+			<p>consectetur adipiscing elit</p>
 		</section>
 
 		<section class="products">
+			<h1 class="products__header" id="productsHeader">Products</h1>
 			<section class="products__container" id="productsContainer">
-				<h1 class="products__header" id="productsHeader">Products</h1>
-
 				<!-- Mall för hur varje produkt ska vara strukturerad sen när detta görs via DOM manipulation 
 				<article class="products__card" id="productCardContainer">
 					<article class="products__img">

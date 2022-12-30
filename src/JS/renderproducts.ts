@@ -84,7 +84,7 @@ export function renderProducts() {
 		button.innerText = "Add to Cart";
 
 		container.appendChild(pCard);
-		pHeader.after(pCard);
+		// pHeader.after(pCard);
 		pCard.appendChild(pImgContainer);
 		pCard.appendChild(pContent);
 

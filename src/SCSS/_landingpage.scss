@@ -1,18 +1,27 @@
+@use "mixins" as m;
+
 html,
 body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	#header {
+	.nav {
 		display: flex;
 		height: 7%;
 		align-items: center;
 		justify-content: space-between;
 		background-color: darkslategray;
-		// position: fixed;
 		width: 100%;
 
-		#navbar {
+		@include m.desktop {
+			justify-content: space-between;
+		}
+		.nav__menu {
+			@include m.desktop {
+				width: 50%;
+			}
+		}
+		.nav__items {
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
@@ -26,12 +35,41 @@ body {
 			padding: 10% 0 0 7%;
 			background-color: rgb(70, 118, 118);
 			transition: 0.3s;
+
+			@include m.desktop {
+				flex-direction: row;
+				right: 0;
+				position: relative;
+				background-color: darkslategray;
+				padding: 0;
+				width: 100%;
+				align-items: center;
+				justify-content: space-evenly;
+				transition: none;
+			}
+
 			li {
 				list-style: none;
 				margin-top: 7%;
+				transition: 0.2s;
+
+				@include m.desktop {
+					margin: 0;
+
+					a:hover {
+						color: rgb(154, 154, 154);
+					}
+				}
 				a {
 					text-decoration: none;
 					color: white;
+					transition: 0.2s;
+
+					@include m.desktop {
+						text-transform: uppercase;
+						font-size: 1.2em;
+						font-weight: bold;
+					}
 				}
 			}
 
@@ -41,6 +79,10 @@ body {
 				top: 2%;
 				font-size: 1.8em;
 				color: white;
+
+				@include m.desktop {
+					display: none;
+				}
 			}
 		}
 
@@ -48,21 +90,50 @@ body {
 			right: 0;
 		}
 
-		#hamburger {
+		.nav__hamburger {
 			padding-right: 1.5em;
-			i {
+			color: white;
+
+			a {
+				font-size: 1.5em;
 				color: white;
+				transition: 0.2s;
+			}
+
+			@include m.desktop {
+				a:hover {
+					color: rgb(154, 154, 154);
+				}
+			}
+
+			a + i {
 				font-size: 1.5em;
 				padding-left: 0.6em;
+
+				@include m.desktop {
+					display: none;
+				}
 			}
 		}
 	}
-	#hero {
-		h1,
-		h2,
-		h4 {
+	.hero {
+		p {
 			margin: 0;
+			font-size: 1em;
+			font-weight: bold;
+			@include m.desktop {
+				font-size: 2em;
+			}
 		}
+
+		p + p {
+			font-size: 2em;
+
+			@include m.desktop {
+				font-size: 2.8em;
+			}
+		}
+
 		background-image: url("../Assets/hero.jpg");
 		height: 70%;
 		width: 100%;
@@ -73,5 +144,9 @@ body {
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
+
+		@include m.desktop {
+			background-position: top 0 left 150%;
+		}
 	}
 }
